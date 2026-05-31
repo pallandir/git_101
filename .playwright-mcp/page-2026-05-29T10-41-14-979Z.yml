@@ -1,0 +1,510 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#_top"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Git logo A brief debunk of Git" [ref=e7] [cursor=pointer]:
+          - /url: /git-primer/
+          - img "Git logo" [ref=e8]
+          - generic [ref=e9]: A brief debunk of Git
+        - button "Search" [ref=e12] [cursor=pointer]:
+          - img [ref=e13]
+          - generic [ref=e15]: Search
+          - generic [ref=e16]:
+            - generic [ref=e17]: ⌘
+            - generic [ref=e18]: K
+        - generic [ref=e19]:
+          - link "GitHub" [ref=e21] [cursor=pointer]:
+            - /url: https://github.com/pallandir/git-primer
+            - generic [ref=e22]: GitHub
+            - img [ref=e23]
+          - generic [ref=e26]:
+            - generic [ref=e27]: Select theme
+            - img
+            - combobox "Select theme" [ref=e28] [cursor=pointer]:
+              - option "Dark" [selected]
+              - option "Light"
+              - option "Auto"
+            - img
+    - navigation "Main":
+      - list [ref=e32]:
+        - listitem [ref=e33]:
+          - group [ref=e34]:
+            - generic "Start here" [ref=e35] [cursor=pointer]:
+              - generic [ref=e36]: Start here
+              - img [ref=e37]
+            - list [ref=e39]:
+              - listitem [ref=e40]:
+                - link "Welcome" [ref=e41] [cursor=pointer]:
+                  - /url: /git-primer/
+              - listitem [ref=e42]:
+                - link "1. Introduction to Git" [ref=e43] [cursor=pointer]:
+                  - /url: /git-primer/introduction/
+              - listitem [ref=e44]:
+                - link "2. Setting Up a Repository" [ref=e45] [cursor=pointer]:
+                  - /url: /git-primer/setup/
+        - listitem [ref=e46]:
+          - group [ref=e47]:
+            - generic "Everyday Git" [ref=e48] [cursor=pointer]:
+              - generic [ref=e49]: Everyday Git
+              - img [ref=e50]
+            - list [ref=e52]:
+              - listitem [ref=e53]:
+                - link "3. Basic Git Workflow" [ref=e54] [cursor=pointer]:
+                  - /url: /git-primer/basic-workflow/
+              - listitem [ref=e55]:
+                - link "4. Working with Branches" [ref=e56] [cursor=pointer]:
+                  - /url: /git-primer/branches/
+              - listitem [ref=e57]:
+                - link "5. Remote Repositories" [ref=e58] [cursor=pointer]:
+                  - /url: /git-primer/remotes/
+              - listitem [ref=e59]:
+                - link "6. Undoing Changes" [ref=e60] [cursor=pointer]:
+                  - /url: /git-primer/undoing-changes/
+        - listitem [ref=e61]:
+          - group [ref=e62]:
+            - generic "Under the Hood" [ref=e63] [cursor=pointer]:
+              - generic [ref=e64]: Under the Hood
+              - img [ref=e65]
+            - list [ref=e67]:
+              - listitem [ref=e68]:
+                - link "7. Understanding Git Internals" [ref=e69] [cursor=pointer]:
+                  - /url: /git-primer/internals/
+        - listitem [ref=e70]:
+          - group [ref=e71]:
+            - generic "Advanced Git" [ref=e72] [cursor=pointer]:
+              - generic [ref=e73]: Advanced Git
+              - img [ref=e74]
+            - list [ref=e76]:
+              - listitem [ref=e77]:
+                - link "8. Advanced Git Commands" [ref=e78] [cursor=pointer]:
+                  - /url: /git-primer/advanced-commands/
+              - listitem [ref=e79]:
+                - link "9. Git Hooks & Automation" [ref=e80] [cursor=pointer]:
+                  - /url: /git-primer/hooks-automation/
+              - listitem [ref=e81]:
+                - link "12. Submodules & Large Repos" [ref=e82] [cursor=pointer]:
+                  - /url: /git-primer/submodules-large-repos/
+        - listitem [ref=e83]:
+          - group [ref=e84]:
+            - generic "Working Well" [ref=e85] [cursor=pointer]:
+              - generic [ref=e86]: Working Well
+              - img [ref=e87]
+            - list [ref=e89]:
+              - listitem [ref=e90]:
+                - link "10. Git Best Practices" [ref=e91] [cursor=pointer]:
+                  - /url: /git-primer/best-practices/
+              - listitem [ref=e92]:
+                - link "11. Troubleshooting" [ref=e93] [cursor=pointer]:
+                  - /url: /git-primer/troubleshooting/
+              - listitem [ref=e94]:
+                - link "13. Git with Other Tools" [ref=e95] [cursor=pointer]:
+                  - /url: /git-primer/other-tools/
+              - listitem [ref=e96]:
+                - link "14. Real-World Scenarios" [ref=e97] [cursor=pointer]:
+                  - /url: /git-primer/real-world-scenarios/
+        - listitem [ref=e98]:
+          - group [ref=e99]:
+            - generic "Keep Learning" [ref=e100] [cursor=pointer]:
+              - generic [ref=e101]: Keep Learning
+              - img [ref=e102]
+            - list [ref=e104]:
+              - listitem [ref=e105]:
+                - link "15. Learning Resources" [ref=e106] [cursor=pointer]:
+                  - /url: /git-primer/resources/
+    - main [ref=e110]:
+      - heading "6. Undoing Changes & Resetting History" [level=1] [ref=e113]
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - heading "Discarding local changes (git restore, git checkout)" [level=2] [ref=e118]
+            - link "Section titled “Discarding local changes (git restore, git checkout)”" [ref=e119] [cursor=pointer]:
+              - /url: "#discarding-local-changes-git-restore-git-checkout"
+              - img [ref=e121]
+              - generic [ref=e123]: Section titled “Discarding local changes (git restore, git checkout)”
+          - paragraph [ref=e124]: There will be times when you need to reset your working directory to a clean state. Whether it’s due to mistakes or a need to abandon changes, Git provides several commands to help you manage this cleanup.
+          - paragraph [ref=e125]:
+            - text: One of the primary commands you’ll use is
+            - code [ref=e126]: git restore
+            - text: . Introduced in
+            - strong [ref=e127]: Git 2.23
+            - text: ", it split the file-restoring job out of the overloaded"
+            - code [ref=e128]: git checkout
+            - text: into a clear, purpose-built command, and it can act on both your working directory and your staging area. Think of it as the modern, less error-prone way to do what people used to do with
+            - code [ref=e129]: git checkout <file>
+            - text: and
+            - code [ref=e130]: git reset <file>
+            - text: .
+          - paragraph [ref=e131]: "To discard changes in your working directory, you can run:"
+          - figure "Terminal window" [ref=e133]:
+            - generic [ref=e136]: Terminal window
+            - code [ref=e138]:
+              - generic [ref=e140]: git restore .
+            - button "Copy to clipboard" [ref=e142] [cursor=pointer]
+          - paragraph [ref=e144]: This command will revert all modified and deleted files in the working directory to their last committed state. However, it will not affect the staging area, the zone where changes are prepared for committing.
+          - paragraph [ref=e145]:
+            - text: If you only want to
+            - strong [ref=e146]: unstage
+            - text: "files (i.e., move them from the staging area back to the working directory), use:"
+          - figure "Terminal window" [ref=e148]:
+            - generic [ref=e151]: Terminal window
+            - code [ref=e153]:
+              - generic [ref=e155]: git restore --staged <file>
+            - button "Copy to clipboard" [ref=e157] [cursor=pointer]
+          - paragraph [ref=e159]: "Or if you need to reset the whole directory:"
+          - figure "Terminal window" [ref=e161]:
+            - generic [ref=e164]: Terminal window
+            - code [ref=e166]:
+              - generic [ref=e168]: git restore --staged .
+            - button "Copy to clipboard" [ref=e170] [cursor=pointer]
+          - paragraph [ref=e172]: "To restore all files in both the staging area and the working directory to their state in the last commit, run:"
+          - figure "Terminal window" [ref=e174]:
+            - generic [ref=e177]: Terminal window
+            - code [ref=e179]:
+              - generic [ref=e181]: git restore --source=HEAD --staged --worktree .
+            - button "Copy to clipboard" [ref=e183] [cursor=pointer]
+          - generic [ref=e185]:
+            - heading "A use case for restore" [level=3] [ref=e186]
+            - link "Section titled “A use case for restore”" [ref=e187] [cursor=pointer]:
+              - /url: "#a-use-case-for-restore"
+              - img [ref=e189]
+              - generic [ref=e191]: Section titled “A use case for restore”
+          - paragraph [ref=e192]: "You can choose to restore a file that you previously deleted while still needing it:"
+          - figure "Terminal window" [ref=e194]:
+            - generic [ref=e197]: Terminal window
+            - code [ref=e199]:
+              - generic [ref=e201]: git restore --source=HEAD <deleted-file>
+            - button "Copy to clipboard" [ref=e203] [cursor=pointer]
+          - paragraph [ref=e205]:
+            - text: Here
+            - code [ref=e206]: HEAD
+            - text: is just a pointer to the latest commit on the active branch, so
+            - code [ref=e207]: "--source=HEAD"
+            - text: means “bring this file back to how it looked in the last commit.”
+          - complementary "Caution" [ref=e208]:
+            - paragraph [ref=e209]:
+              - img [ref=e210]
+              - text: Caution
+            - paragraph [ref=e213]:
+              - text: If you deleted a file but didn’t commit that deletion,
+              - code [ref=e214]: git restore
+              - text: will bring back the file from the last commit. If you already committed the deletion, you’d need to recover it from an earlier commit where the file still existed.
+          - generic [ref=e215]:
+            - heading "Unstaging files (git reset HEAD)" [level=2] [ref=e216]
+            - link "Section titled “Unstaging files (git reset HEAD)”" [ref=e217] [cursor=pointer]:
+              - /url: "#unstaging-files-git-reset-head"
+              - img [ref=e219]
+              - generic [ref=e221]: Section titled “Unstaging files (git reset HEAD)”
+          - paragraph [ref=e222]:
+            - text: The best way in the latest versions of Git to unstage files is to use the
+            - code [ref=e223]: git restore --staged .
+            - text: command.
+          - paragraph [ref=e224]:
+            - text: However, there is also the older command
+            - code [ref=e225]: reset
+            - text: . This one can be quite confusing because it’s not always explicit about what is being reset.
+          - paragraph [ref=e226]: "To reset a staged file you can run:"
+          - figure "Terminal window" [ref=e228]:
+            - generic [ref=e231]: Terminal window
+            - code [ref=e233]:
+              - generic [ref=e235]: git reset <file>
+            - button "Copy to clipboard" [ref=e237] [cursor=pointer]
+          - paragraph [ref=e239]: "If you need to reset all staged files you can run:"
+          - figure "Terminal window" [ref=e241]:
+            - generic [ref=e244]: Terminal window
+            - code [ref=e246]:
+              - generic [ref=e248]: git reset
+            - button "Copy to clipboard" [ref=e250] [cursor=pointer]
+          - paragraph [ref=e252]: This will unstage all your files but your changes will still be there (you will not lose your code).
+          - generic [ref=e253]:
+            - heading "Reset —soft and —hard" [level=3] [ref=e254]
+            - link "Section titled “Reset —soft and —hard”" [ref=e255] [cursor=pointer]:
+              - /url: "#reset-soft-and-hard"
+              - img [ref=e257]
+              - generic [ref=e259]: Section titled “Reset —soft and —hard”
+          - paragraph [ref=e260]: "When you need to undo a recent commit, there are different options available depending on whether you want to keep or discard the changes. Press the buttons below to compare them side by side:"
+          - generic [ref=e262]:
+            - generic [ref=e263]:
+              - generic [ref=e265]:
+                - button "git reset --soft HEAD~" [ref=e266] [cursor=pointer]
+                - button "git reset --hard HEAD~" [ref=e267] [cursor=pointer]
+                - button "↺ Restart" [disabled] [ref=e268]
+              - paragraph [ref=e270]: HEAD points at C4, the latest commit. Your working directory is clean.
+            - generic [ref=e271]:
+              - img "HEAD movement during git reset" [ref=e272]:
+                - generic [ref=e274]:
+                  - generic: C1
+                - generic [ref=e277]:
+                  - generic: C2
+                - generic [ref=e280]:
+                  - generic: C3
+                - generic [ref=e283]:
+                  - generic: C4
+                - generic [ref=e286]:
+                  - generic: HEAD
+              - generic [ref=e289]:
+                - generic [ref=e290]: "Working directory / staging:"
+                - generic [ref=e291]: clean
+          - paragraph [ref=e292]: In most cases, you’ll want to reset your recent commit to either amend the commit message or because the content wasn’t ready, but still keep your staged files and local changes. In other words, you want to reset only the commit history.
+          - paragraph [ref=e293]: "To do this, you can use the following command:"
+          - figure "Terminal window" [ref=e295]:
+            - generic [ref=e298]: Terminal window
+            - code [ref=e300]:
+              - generic [ref=e302]: git reset --soft HEAD~
+            - button "Copy to clipboard" [ref=e304] [cursor=pointer]
+          - paragraph [ref=e306]:
+            - text: This command is elegant because it moves your
+            - code [ref=e307]: HEAD
+            - text: back by one commit (i.e., resetting the erroneous commit you just made) while keeping your changes intact. Your working directory and staging area remain as they were, so you can modify the files or update the commit message before making a new commit. The
+            - code [ref=e308]: ~
+            - text: here is shorthand for
+            - code [ref=e309]: ~1
+            - text: (one commit back);
+            - code [ref=e310]: HEAD~2
+            - text: would move back two commits, and so on.
+          - paragraph [ref=e311]: "If you need to reset your latest commit and discard all changes made since then (for example, to undo an erroneous merge), you can use:"
+          - figure "Terminal window" [ref=e313]:
+            - generic [ref=e316]: Terminal window
+            - code [ref=e318]:
+              - generic [ref=e320]: git reset --hard HEAD~
+            - button "Copy to clipboard" [ref=e322] [cursor=pointer]
+          - paragraph [ref=e324]:
+            - text: This will move your
+            - code [ref=e325]: HEAD
+            - text: back by one commit and completely discard all changes in both the working directory and the staging area since that commit.
+          - complementary "Danger" [ref=e326]:
+            - paragraph [ref=e327]:
+              - img [ref=e328]
+              - text: Danger
+            - paragraph [ref=e331]:
+              - text: You will lose any uncommitted changes with
+              - code [ref=e332]: "--hard"
+              - text: ", so be sure you really want to discard everything made after that commit."
+          - generic [ref=e333]:
+            - heading "Amending commits (git commit —amend)" [level=2] [ref=e334]
+            - link "Section titled “Amending commits (git commit —amend)”" [ref=e335] [cursor=pointer]:
+              - /url: "#amending-commits-git-commit-amend"
+              - img [ref=e337]
+              - generic [ref=e339]: Section titled “Amending commits (git commit —amend)”
+          - paragraph [ref=e340]:
+            - text: Sometimes, you don’t need to reset an entire commit just to fix a mistake. When you want to change a commit message or add a missing file, there’s no need to reset the entire commit history. Git provides a command for this called
+            - code [ref=e341]: "--amend"
+            - text: .
+          - paragraph [ref=e342]: "If you run:"
+          - figure "Terminal window" [ref=e344]:
+            - generic [ref=e347]: Terminal window
+            - code [ref=e349]:
+              - generic [ref=e351]: git commit --amend
+            - button "Copy to clipboard" [ref=e353] [cursor=pointer]
+          - paragraph [ref=e355]: This will allow you to edit your latest commit message. For example, you can fix a typo or adjust the commit message to be more accurate.
+          - paragraph [ref=e356]: "If you need to add or remove a file from the commit, follow these steps:"
+          - list [ref=e357]:
+            - listitem [ref=e358]: "Add the missing file:"
+          - figure "Terminal window" [ref=e360]:
+            - generic [ref=e363]: Terminal window
+            - code [ref=e365]:
+              - generic [ref=e367]: git add <file>
+            - button "Copy to clipboard" [ref=e369] [cursor=pointer]
+          - list [ref=e371]:
+            - listitem [ref=e372]: "Or, remove a file:"
+          - figure "Terminal window" [ref=e374]:
+            - generic [ref=e377]: Terminal window
+            - code [ref=e379]:
+              - generic [ref=e381]: git rm <file>
+            - button "Copy to clipboard" [ref=e383] [cursor=pointer]
+          - list [ref=e385]:
+            - listitem [ref=e386]: "Then, run the following to amend the commit without changing the message:"
+          - figure "Terminal window" [ref=e388]:
+            - generic [ref=e391]: Terminal window
+            - code [ref=e393]:
+              - generic [ref=e395]: git commit --amend --no-edit
+            - button "Copy to clipboard" [ref=e397] [cursor=pointer]
+          - paragraph [ref=e399]:
+            - text: The
+            - code [ref=e400]: "--no-edit"
+            - text: flag tells Git that you don’t want to modify the commit message. Instead, it will update the commit to include the added or removed files.
+          - paragraph [ref=e401]:
+            - text: The
+            - code [ref=e402]: "--amend"
+            - text: command effectively rewrites the latest commit. It replaces the old commit in the history with the newly amended one. This means the original commit will no longer be visible after you amend it.
+          - complementary "Caution" [ref=e403]:
+            - paragraph [ref=e404]:
+              - img [ref=e405]
+              - text: Caution
+            - paragraph [ref=e408]: Amending commits rewrites history, so be cautious if the commit has already been pushed to a shared remote repository. It’s best to amend commits only when they haven’t been shared with others yet.
+          - generic [ref=e409]:
+            - heading "Reverting commits (git revert)" [level=2] [ref=e410]
+            - link "Section titled “Reverting commits (git revert)”" [ref=e411] [cursor=pointer]:
+              - /url: "#reverting-commits-git-revert"
+              - img [ref=e413]
+              - generic [ref=e415]: Section titled “Reverting commits (git revert)”
+          - paragraph [ref=e416]:
+            - text: Not all files in a project should be pushed to a remote repository. Some, like
+            - code [ref=e417]: .env
+            - text: files and credentials, should always remain on your local machine. However, mistakes happen, and you might accidentally commit and push sensitive or unwanted files. In such cases, you need to revert the commit to remove the changes while keeping your commit history intact.
+          - paragraph [ref=e418]:
+            - text: The advantage of using
+            - code [ref=e419]: git revert
+            - text: is that it’s a non-destructive action. Instead of deleting or modifying the commit history, it creates a new commit that undoes the changes from the previous commit. This approach is recommended because rewriting history can cause issues for other contributors working on the project.
+          - paragraph [ref=e420]:
+            - text: As a general rule, Git encourages avoiding history rewrites for commits that have already been shared with others. This same principle applies when we discuss
+            - code [ref=e421]: rebasing
+            - text: in
+            - link "Chapter 8" [ref=e422] [cursor=pointer]:
+              - /url: /git-primer/advanced-commands/
+            - text: .
+          - paragraph [ref=e423]: "To revert a commit, use:"
+          - figure "Terminal window" [ref=e425]:
+            - generic [ref=e428]: Terminal window
+            - code [ref=e430]:
+              - generic [ref=e432]: git revert <commit-hash>
+            - button "Copy to clipboard" [ref=e434] [cursor=pointer]
+          - paragraph [ref=e436]: This command generates a new commit that negates the changes introduced by the specified commit. Once done, you can push the reverted commit to the remote repository so everyone stays up to date.
+          - paragraph [ref=e437]:
+            - text: Reverting a
+            - strong [ref=e438]: merge commit
+            - text: needs one extra detail. A merge has two parents, so you must tell Git which one to treat as the mainline with
+            - code [ref=e439]: "-m"
+            - text: (almost always
+            - code [ref=e440]: "-m 1"
+            - text: ", the branch you merged into):"
+          - figure "Terminal window" [ref=e442]:
+            - generic [ref=e445]: Terminal window
+            - code [ref=e447]:
+              - generic [ref=e449]: git revert -m 1 <merge-commit-hash>
+            - button "Copy to clipboard" [ref=e451] [cursor=pointer]
+          - complementary "Note" [ref=e453]:
+            - paragraph [ref=e454]:
+              - img [ref=e455]
+              - text: Note
+            - paragraph [ref=e458]:
+              - text: If you accidentally committed sensitive information (like passwords or API keys), reverting alone may not be enough to remove it from the repository’s history. In such cases, consider using the BFG Repo-Cleaner or
+              - code [ref=e459]: git filter-repo
+              - text: to rewrite history and force push the changes (with caution). And always rotate the leaked secret.
+          - generic [ref=e460]:
+            - heading "Reset vs. Revert vs. Checkout" [level=2] [ref=e461]
+            - link "Section titled “Reset vs. Revert vs. Checkout”" [ref=e462] [cursor=pointer]:
+              - /url: "#reset-vs-revert-vs-checkout"
+              - img [ref=e464]
+              - generic [ref=e466]: Section titled “Reset vs. Revert vs. Checkout”
+          - paragraph [ref=e467]:
+            - text: "Git provides multiple ways to undo changes, and at first they can feel interchangeable. They are not. The key question is always:"
+            - strong [ref=e468]: what exactly am I trying to undo, and has it been shared with others yet?
+          - paragraph [ref=e469]: "Let’s line up the three commands people most often confuse:"
+          - list [ref=e470]:
+            - listitem [ref=e471]:
+              - code [ref=e472]: git checkout
+              - text: /
+              - code [ref=e473]: git restore
+              - text: works on
+              - strong [ref=e474]: files
+              - text: . It discards uncommitted changes in your working directory and brings a file back to a previous state. It does not touch your commit history.
+            - listitem [ref=e475]:
+              - code [ref=e476]: git reset
+              - text: works on the
+              - strong [ref=e477]: branch pointer
+              - text: . It moves your branch back to an earlier commit, optionally throwing away the changes in between. With
+              - code [ref=e478]: "--hard"
+              - text: this rewrites history and is destructive.
+            - listitem [ref=e479]:
+              - code [ref=e480]: git revert
+              - text: works by
+              - strong [ref=e481]: adding history
+              - text: . Instead of erasing a commit, it creates a brand new commit that undoes the effect of an earlier one. Nothing is rewritten, which makes it safe to share.
+          - table [ref=e482]:
+            - rowgroup [ref=e483]:
+              - row "Feature git checkout / git restore git reset --hard git revert" [ref=e484]:
+                - columnheader "Feature" [ref=e485]
+                - columnheader "git checkout / git restore" [ref=e486]:
+                  - code [ref=e487]: git checkout
+                  - text: /
+                  - code [ref=e488]: git restore
+                - columnheader "git reset --hard" [ref=e489]:
+                  - code [ref=e490]: git reset --hard
+                - columnheader "git revert" [ref=e491]:
+                  - code [ref=e492]: git revert
+            - rowgroup [ref=e493]:
+              - row "Operates on Files in the working directory The branch pointer (commit history) The branch, by adding a new commit" [ref=e494]:
+                - cell "Operates on" [ref=e495]:
+                  - strong [ref=e496]: Operates on
+                - cell "Files in the working directory" [ref=e497]
+                - cell "The branch pointer (commit history)" [ref=e498]
+                - cell "The branch, by adding a new commit" [ref=e499]
+              - row "Effect Discards local file changes Moves the branch pointer back and erases commits Creates a new commit that undoes changes" [ref=e500]:
+                - cell "Effect" [ref=e501]:
+                  - strong [ref=e502]: Effect
+                - cell "Discards local file changes" [ref=e503]
+                - cell "Moves the branch pointer back and erases commits" [ref=e504]
+                - cell "Creates a new commit that undoes changes" [ref=e505]
+              - row "History rewrite No (history untouched) Yes (destructive) No (safe)" [ref=e506]:
+                - cell "History rewrite" [ref=e507]:
+                  - strong [ref=e508]: History rewrite
+                - cell "No (history untouched)" [ref=e509]
+                - cell "Yes (destructive)" [ref=e510]
+                - cell "No (safe)" [ref=e511]
+              - row "Use case Drop edits you haven’t committed Undo local commits before pushing Revert changes safely in a shared repository" [ref=e512]:
+                - cell "Use case" [ref=e513]:
+                  - strong [ref=e514]: Use case
+                - cell "Drop edits you haven’t committed" [ref=e515]
+                - cell "Undo local commits before pushing" [ref=e516]
+                - cell "Revert changes safely in a shared repository" [ref=e517]
+              - row "Impact on remote None Force push needed only if the commits were already pushed Does not require force push" [ref=e518]:
+                - cell "Impact on remote" [ref=e519]:
+                  - strong [ref=e520]: Impact on remote
+                - cell "None" [ref=e521]
+                - cell "Force push needed only if the commits were already pushed" [ref=e522]
+                - cell "Does not require force push" [ref=e523]
+          - generic [ref=e524]:
+            - heading "When to use each" [level=3] [ref=e525]
+            - link "Section titled “When to use each”" [ref=e526] [cursor=pointer]:
+              - /url: "#when-to-use-each"
+              - img [ref=e528]
+              - generic [ref=e530]: Section titled “When to use each”
+          - list [ref=e531]:
+            - listitem [ref=e532]:
+              - text: Use
+              - code [ref=e533]: git restore
+              - text: (or
+              - code [ref=e534]: git checkout <file>
+              - text: ) when you just want to throw away uncommitted edits to a file.
+            - listitem [ref=e535]:
+              - text: Use
+              - code [ref=e536]: git reset --hard
+              - text: only when you haven’t shared your changes yet (e.g., fixing local commits before they leave your machine).
+            - listitem [ref=e537]:
+              - text: Use
+              - code [ref=e538]: git revert
+              - text: when you need to undo a commit while keeping history intact. This is the safer option, especially when working in a team.
+          - paragraph [ref=e539]: By understanding these differences, you can choose the right approach based on your situation and avoid unnecessary issues in collaboration.
+        - generic [ref=e540]:
+          - link "Edit page" [ref=e542] [cursor=pointer]:
+            - /url: https://github.com/pallandir/git-primer/edit/main/src/content/docs/undoing-changes.mdx
+            - img [ref=e543]
+            - text: Edit page
+          - generic [ref=e545]:
+            - link "Previous 5. Remote Repositories" [ref=e546] [cursor=pointer]:
+              - /url: /git-primer/remotes/
+              - img [ref=e547]
+              - generic [ref=e549]:
+                - text: Previous
+                - text: 5. Remote Repositories
+            - link "Next 7. Understanding Git Internals" [ref=e550] [cursor=pointer]:
+              - /url: /git-primer/internals/
+              - img [ref=e551]
+              - generic [ref=e553]:
+                - text: Next
+                - text: 7. Understanding Git Internals
+  - generic [ref=e556]:
+    - button "Menu" [ref=e557]:
+      - img [ref=e559]
+      - generic: Menu
+    - button "Inspect" [ref=e563]:
+      - img [ref=e565]
+      - generic: Inspect
+    - button "Audit" [ref=e567]:
+      - img [ref=e569]
+      - generic: Audit
+    - button "Settings" [ref=e572]:
+      - img [ref=e574]
+      - generic: Settings

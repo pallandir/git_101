@@ -3,6 +3,8 @@ title: 10. Git Best Practices
 description: Write good commit messages, keep a clean history, and choose the right branching workflow.
 ---
 
+import FeatureWorkflow from '../../components/FeatureWorkflow.svelte';
+
 ## Git Best Practices
 
 Knowing the commands is half the journey. The other half is using them in a way that keeps your project readable and your teammates happy. None of these practices are enforced by Git itself, they're habits that separate a confusing repository from a pleasant one to work in.
@@ -85,18 +87,7 @@ The simplest and most popular for web projects and continuous deployment. There'
 3. Open a pull request for review.
 4. Merge back into `main` and deploy.
 
-```mermaid
-gitGraph
-   commit id: "init"
-   commit id: "setup"
-   branch feature-x
-   checkout feature-x
-   commit id: "work"
-   commit id: "review fixes"
-   checkout main
-   merge feature-x
-   commit id: "deploy"
-```
+<FeatureWorkflow client:visible />
 
 It's easy to learn and fast, which is why most small-to-medium teams use it.
 

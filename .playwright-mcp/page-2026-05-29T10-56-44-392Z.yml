@@ -1,0 +1,384 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#_top"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Git logo A brief debunk of Git" [ref=e7] [cursor=pointer]:
+          - /url: /git-primer/
+          - img "Git logo" [ref=e8]
+          - generic [ref=e9]: A brief debunk of Git
+        - button "Search" [ref=e12] [cursor=pointer]:
+          - img [ref=e13]
+          - generic [ref=e15]: Search
+          - generic [ref=e16]:
+            - generic [ref=e17]: ⌘
+            - generic [ref=e18]: K
+        - generic [ref=e19]:
+          - link "GitHub" [ref=e21] [cursor=pointer]:
+            - /url: https://github.com/pallandir/git-primer
+            - generic [ref=e22]: GitHub
+            - img [ref=e23]
+          - generic [ref=e26]:
+            - generic [ref=e27]: Select theme
+            - img
+            - combobox "Select theme" [ref=e28] [cursor=pointer]:
+              - option "Dark" [selected]
+              - option "Light"
+              - option "Auto"
+            - img
+    - navigation "Main":
+      - list [ref=e32]:
+        - listitem [ref=e33]:
+          - group [ref=e34]:
+            - generic "Start here" [ref=e35] [cursor=pointer]:
+              - generic [ref=e36]: Start here
+              - img [ref=e37]
+            - list [ref=e39]:
+              - listitem [ref=e40]:
+                - link "Welcome" [ref=e41] [cursor=pointer]:
+                  - /url: /git-primer/
+              - listitem [ref=e42]:
+                - link "1. Introduction to Git" [ref=e43] [cursor=pointer]:
+                  - /url: /git-primer/introduction/
+              - listitem [ref=e44]:
+                - link "2. Setting Up a Repository" [ref=e45] [cursor=pointer]:
+                  - /url: /git-primer/setup/
+        - listitem [ref=e46]:
+          - group [ref=e47]:
+            - generic "Everyday Git" [ref=e48] [cursor=pointer]:
+              - generic [ref=e49]: Everyday Git
+              - img [ref=e50]
+            - list [ref=e52]:
+              - listitem [ref=e53]:
+                - link "3. Basic Git Workflow" [ref=e54] [cursor=pointer]:
+                  - /url: /git-primer/basic-workflow/
+              - listitem [ref=e55]:
+                - link "4. Working with Branches" [ref=e56] [cursor=pointer]:
+                  - /url: /git-primer/branches/
+              - listitem [ref=e57]:
+                - link "5. Remote Repositories" [ref=e58] [cursor=pointer]:
+                  - /url: /git-primer/remotes/
+              - listitem [ref=e59]:
+                - link "6. Undoing Changes" [ref=e60] [cursor=pointer]:
+                  - /url: /git-primer/undoing-changes/
+        - listitem [ref=e61]:
+          - group [ref=e62]:
+            - generic "Under the Hood" [ref=e63] [cursor=pointer]:
+              - generic [ref=e64]: Under the Hood
+              - img [ref=e65]
+            - list [ref=e67]:
+              - listitem [ref=e68]:
+                - link "7. Understanding Git Internals" [ref=e69] [cursor=pointer]:
+                  - /url: /git-primer/internals/
+        - listitem [ref=e70]:
+          - group [ref=e71]:
+            - generic "Advanced Git" [ref=e72] [cursor=pointer]:
+              - generic [ref=e73]: Advanced Git
+              - img [ref=e74]
+            - list [ref=e76]:
+              - listitem [ref=e77]:
+                - link "8. Advanced Git Commands" [ref=e78] [cursor=pointer]:
+                  - /url: /git-primer/advanced-commands/
+              - listitem [ref=e79]:
+                - link "9. Git Hooks & Automation" [ref=e80] [cursor=pointer]:
+                  - /url: /git-primer/hooks-automation/
+              - listitem [ref=e81]:
+                - link "12. Submodules & Large Repos" [ref=e82] [cursor=pointer]:
+                  - /url: /git-primer/submodules-large-repos/
+        - listitem [ref=e83]:
+          - group [ref=e84]:
+            - generic "Working Well" [ref=e85] [cursor=pointer]:
+              - generic [ref=e86]: Working Well
+              - img [ref=e87]
+            - list [ref=e89]:
+              - listitem [ref=e90]:
+                - link "10. Git Best Practices" [ref=e91] [cursor=pointer]:
+                  - /url: /git-primer/best-practices/
+              - listitem [ref=e92]:
+                - link "11. Troubleshooting" [ref=e93] [cursor=pointer]:
+                  - /url: /git-primer/troubleshooting/
+              - listitem [ref=e94]:
+                - link "13. Git with Other Tools" [ref=e95] [cursor=pointer]:
+                  - /url: /git-primer/other-tools/
+              - listitem [ref=e96]:
+                - link "14. Real-World Scenarios" [ref=e97] [cursor=pointer]:
+                  - /url: /git-primer/real-world-scenarios/
+        - listitem [ref=e98]:
+          - group [ref=e99]:
+            - generic "Keep Learning" [ref=e100] [cursor=pointer]:
+              - generic [ref=e101]: Keep Learning
+              - img [ref=e102]
+            - list [ref=e104]:
+              - listitem [ref=e105]:
+                - link "15. Learning Resources" [ref=e106] [cursor=pointer]:
+                  - /url: /git-primer/resources/
+    - main [ref=e110]:
+      - heading "10. Git Best Practices" [level=1] [ref=e113]
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - heading "Git Best Practices" [level=2] [ref=e118]
+            - link "Section titled “Git Best Practices”" [ref=e119] [cursor=pointer]:
+              - /url: "#git-best-practices"
+              - img [ref=e121]
+              - generic [ref=e123]: Section titled “Git Best Practices”
+          - paragraph [ref=e124]: Knowing the commands is half the journey. The other half is using them in a way that keeps your project readable and your teammates happy. None of these practices are enforced by Git itself, they’re habits that separate a confusing repository from a pleasant one to work in.
+          - generic [ref=e125]:
+            - heading "Writing good commit messages" [level=2] [ref=e126]
+            - link "Section titled “Writing good commit messages”" [ref=e127] [cursor=pointer]:
+              - /url: "#writing-good-commit-messages"
+              - img [ref=e129]
+              - generic [ref=e131]: Section titled “Writing good commit messages”
+          - paragraph [ref=e132]:
+            - text: A commit message is a note to your future self and your teammates explaining
+            - strong [ref=e133]: why
+            - text: a change happened. Six months from now, “fix stuff” tells you nothing, while “Fix login redirect loop on expired sessions” tells you everything.
+          - paragraph [ref=e134]: "A widely adopted structure looks like this:"
+          - figure [ref=e136]:
+            - code [ref=e138]:
+              - generic [ref=e140]: "<type>: <short summary in the imperative mood>"
+              - generic [ref=e144]: <optional longer body explaining the why, not the how>
+            - button "Copy to clipboard" [ref=e146] [cursor=pointer]
+          - paragraph [ref=e148]: "A few guidelines that consistently pay off:"
+          - list [ref=e149]:
+            - listitem [ref=e150]:
+              - text: Write the summary in the
+              - strong [ref=e151]: imperative mood
+              - text: ": “Add”, “Fix”, “Remove”, as if completing the sentence “This commit will…”."
+            - listitem [ref=e152]: Keep the summary line short (around 50 characters) and don’t end it with a period.
+            - listitem [ref=e153]:
+              - text: Use the body to explain
+              - strong [ref=e154]: why
+              - text: the change was needed, not to restate what the diff already shows.
+            - listitem [ref=e155]: Make each commit one logical change. If you find yourself writing “and” in the summary, it might be two commits.
+          - paragraph [ref=e156]:
+            - text: Many teams adopt the
+            - link "Conventional Commits" [ref=e157] [cursor=pointer]:
+              - /url: https://www.conventionalcommits.org/
+            - text: "format, which prefixes the summary with a type:"
+          - figure [ref=e159]:
+            - code [ref=e161]:
+              - generic [ref=e163]: "feat: add password reset flow"
+              - generic [ref=e165]: "fix: prevent crash when cart is empty"
+              - generic [ref=e167]: "docs: update installation steps"
+              - generic [ref=e169]: "refactor: extract validation into helper"
+              - generic [ref=e171]: "chore: bump dependencies"
+            - button "Copy to clipboard" [ref=e173] [cursor=pointer]
+          - paragraph [ref=e175]:
+            - text: "The payoff is real: tools can read these prefixes to automatically generate changelogs and decide version numbers. And as we saw in"
+            - link "Chapter 9" [ref=e176] [cursor=pointer]:
+              - /url: /git-primer/hooks-automation/
+            - text: ", a"
+            - code [ref=e177]: commit-msg
+            - text: hook can gently enforce the format for you.
+          - generic [ref=e178]:
+            - heading "Keeping a clean commit history" [level=2] [ref=e179]
+            - link "Section titled “Keeping a clean commit history”" [ref=e180] [cursor=pointer]:
+              - /url: "#keeping-a-clean-commit-history"
+              - img [ref=e182]
+              - generic [ref=e184]: Section titled “Keeping a clean commit history”
+          - paragraph [ref=e185]: A clean history is one you can actually read and reason about. You don’t need to be obsessive, but a few habits make a big difference.
+          - paragraph [ref=e186]:
+            - strong [ref=e187]: Commit small and often, then tidy before sharing.
+            - text: While you work, commit freely, even messy “wip” commits. Before you push or open a pull request, use the interactive rebase from
+            - link "Chapter 8" [ref=e188] [cursor=pointer]:
+              - /url: /git-primer/advanced-commands/
+            - text: "to squash the noise into meaningful commits:"
+          - figure "Terminal window" [ref=e190]:
+            - generic [ref=e193]: Terminal window
+            - code [ref=e195]:
+              - generic [ref=e197]: git rebase -i HEAD~5
+            - button "Copy to clipboard" [ref=e199] [cursor=pointer]
+          - paragraph [ref=e201]:
+            - strong [ref=e202]: Never commit generated files, secrets, or local clutter.
+            - text: This is what
+            - code [ref=e203]: .gitignore
+            - text: "is for. List the files and folders Git should ignore, one pattern per line:"
+          - figure [ref=e205]:
+            - code [ref=e207]:
+              - generic [ref=e209]: "# Dependencies"
+              - generic [ref=e211]: node_modules/
+              - generic [ref=e215]: "# Environment and secrets"
+              - generic [ref=e217]: .env
+              - generic [ref=e221]: "# Build output"
+              - generic [ref=e223]: dist/
+              - generic [ref=e225]: build/
+              - generic [ref=e229]: "# OS and editor noise"
+              - generic [ref=e231]: .DS_Store
+              - generic [ref=e233]: .vscode/
+            - button "Copy to clipboard" [ref=e235] [cursor=pointer]
+          - complementary "Caution" [ref=e237]:
+            - paragraph [ref=e238]:
+              - img [ref=e239]
+              - text: Caution
+            - paragraph [ref=e242]:
+              - text: If you ever commit a secret like an API key, removing it in a later commit is
+              - strong [ref=e243]: not enough
+              - text: ", it still lives in history. Rotate the secret immediately and, as mentioned in"
+              - link "Chapter 6" [ref=e244] [cursor=pointer]:
+                - /url: /git-primer/undoing-changes/
+              - text: ", use a history-rewriting tool to scrub it."
+          - paragraph [ref=e245]:
+            - strong [ref=e246]:
+              - text: Prefer
+              - code [ref=e247]: revert
+              - text: over
+              - code [ref=e248]: reset
+              - text: on shared branches.
+            - text: Undoing a public commit should add a new commit, not rewrite what others have already pulled.
+          - generic [ref=e249]:
+            - heading "Git workflows (Git Flow, Trunk-based, GitHub Flow)" [level=2] [ref=e250]
+            - link "Section titled “Git workflows (Git Flow, Trunk-based, GitHub Flow)”" [ref=e251] [cursor=pointer]:
+              - /url: "#git-workflows-git-flow-trunk-based-github-flow"
+              - img [ref=e253]
+              - generic [ref=e255]: Section titled “Git workflows (Git Flow, Trunk-based, GitHub Flow)”
+          - paragraph [ref=e256]: A workflow is the agreed-upon set of rules for how your team uses branches. There’s no single best one, the right choice depends on your team size and how often you release. Here are the three you’ll meet most often.
+          - generic [ref=e257]:
+            - heading "GitHub Flow" [level=3] [ref=e258]
+            - link "Section titled “GitHub Flow”" [ref=e259] [cursor=pointer]:
+              - /url: "#github-flow"
+              - img [ref=e261]
+              - generic [ref=e263]: Section titled “GitHub Flow”
+          - paragraph [ref=e264]:
+            - text: The simplest and most popular for web projects and continuous deployment. There’s one long-lived branch,
+            - code [ref=e265]: main
+            - text: ", which is always deployable. For any change you:"
+          - list [ref=e266]:
+            - listitem [ref=e267]:
+              - text: Branch off
+              - code [ref=e268]: main
+              - text: (
+              - code [ref=e269]: git switch -c feature-x
+              - text: ).
+            - listitem [ref=e270]: Commit your work and push.
+            - listitem [ref=e271]: Open a pull request for review.
+            - listitem [ref=e272]:
+              - text: Merge back into
+              - code [ref=e273]: main
+              - text: and deploy.
+          - generic [ref=e275]:
+            - generic [ref=e276]:
+              - generic [ref=e278]:
+                - generic [ref=e279]:
+                  - button "Previous step" [disabled] [ref=e280]: ◂ Prev
+                  - button "Branch + commit ▸" [ref=e281] [cursor=pointer]
+                  - button "Restart" [disabled] [ref=e282]: ↺ Restart
+                - generic [ref=e283]:
+                  - slider "Timeline scrubber" [ref=e284] [cursor=pointer]: "0"
+                  - generic [ref=e285]: 1 / 5
+              - generic [ref=e286]:
+                - generic [ref=e287]: Step 1 of 5
+                - paragraph [ref=e288]: Start on main. init and setup are your stable base — the line everyone ships from.
+            - 'img "A feature branch workflow: branch, commit, merge, deploy" [ref=e290]':
+              - generic [ref=e292]:
+                - generic: init
+              - generic [ref=e295]:
+                - generic: setup
+              - generic [ref=e298]:
+                - generic: main
+          - paragraph [ref=e301]: It’s easy to learn and fast, which is why most small-to-medium teams use it.
+          - generic [ref=e302]:
+            - heading "Trunk-based development" [level=3] [ref=e303]
+            - link "Section titled “Trunk-based development”" [ref=e304] [cursor=pointer]:
+              - /url: "#trunk-based-development"
+              - img [ref=e306]
+              - generic [ref=e308]: Section titled “Trunk-based development”
+          - paragraph [ref=e309]:
+            - text: A close cousin favored by teams that ship many times a day. Everyone integrates into
+            - code [ref=e310]: main
+            - text: (the “trunk”) very frequently, often through short-lived branches that live for hours, not days. Big or risky features hide behind
+            - strong [ref=e311]: feature flags
+            - text: rather than long-running branches. This keeps painful integration conflicts to a minimum, but it relies heavily on strong automated testing.
+          - generic [ref=e312]:
+            - heading "Git Flow" [level=3] [ref=e313]
+            - link "Section titled “Git Flow”" [ref=e314] [cursor=pointer]:
+              - /url: "#git-flow"
+              - img [ref=e316]
+              - generic [ref=e318]: Section titled “Git Flow”
+          - paragraph [ref=e319]: "A more structured model designed for projects with scheduled releases and multiple versions in the wild. It uses several long-lived branches with strict roles:"
+          - list [ref=e320]:
+            - listitem [ref=e321]:
+              - code [ref=e322]: main
+              - text: holds production-ready, released code.
+            - listitem [ref=e323]:
+              - code [ref=e324]: develop
+              - text: is the integration branch for the next release.
+            - listitem [ref=e325]:
+              - code [ref=e326]: feature/*
+              - text: branches come off
+              - code [ref=e327]: develop
+              - text: for new work.
+            - listitem [ref=e328]:
+              - code [ref=e329]: release/*
+              - text: branches prepare a version for shipping.
+            - listitem [ref=e330]:
+              - code [ref=e331]: hotfix/*
+              - text: branches patch production urgently off
+              - code [ref=e332]: main
+              - text: .
+          - paragraph [ref=e333]: Git Flow is powerful but heavy. For most modern teams practicing continuous delivery, it’s more ceremony than they need, and GitHub Flow or trunk-based development is a better fit.
+          - generic [ref=e334]:
+            - heading "Which one should you pick?" [level=3] [ref=e335]
+            - link "Section titled “Which one should you pick?”" [ref=e336] [cursor=pointer]:
+              - /url: "#which-one-should-you-pick"
+              - img [ref=e338]
+              - generic [ref=e340]: Section titled “Which one should you pick?”
+          - table [ref=e341]:
+            - rowgroup [ref=e342]:
+              - row "Workflow Best for Complexity" [ref=e343]:
+                - columnheader "Workflow" [ref=e344]
+                - columnheader "Best for" [ref=e345]
+                - columnheader "Complexity" [ref=e346]
+            - rowgroup [ref=e347]:
+              - row "GitHub Flow Web apps, continuous deployment, most teams Low" [ref=e348]:
+                - cell "GitHub Flow" [ref=e349]:
+                  - strong [ref=e350]: GitHub Flow
+                - cell "Web apps, continuous deployment, most teams" [ref=e351]
+                - cell "Low" [ref=e352]
+              - row "Trunk-based High-velocity teams shipping many times a day Medium" [ref=e353]:
+                - cell "Trunk-based" [ref=e354]:
+                  - strong [ref=e355]: Trunk-based
+                - cell "High-velocity teams shipping many times a day" [ref=e356]
+                - cell "Medium" [ref=e357]
+              - row "Git Flow Versioned software with scheduled releases High" [ref=e358]:
+                - cell "Git Flow" [ref=e359]:
+                  - strong [ref=e360]: Git Flow
+                - cell "Versioned software with scheduled releases" [ref=e361]
+                - cell "High" [ref=e362]
+          - complementary "Tip" [ref=e363]:
+            - paragraph [ref=e364]:
+              - img [ref=e365]
+              - text: Tip
+            - paragraph [ref=e369]: Start simple. Most teams are best served by GitHub Flow and should only reach for something heavier when they feel a concrete pain that the simpler model can’t solve.
+        - generic [ref=e370]:
+          - link "Edit page" [ref=e372] [cursor=pointer]:
+            - /url: https://github.com/pallandir/git-primer/edit/main/src/content/docs/best-practices.mdx
+            - img [ref=e373]
+            - text: Edit page
+          - generic [ref=e375]:
+            - link "Previous 12. Submodules & Large Repos" [ref=e376] [cursor=pointer]:
+              - /url: /git-primer/submodules-large-repos/
+              - img [ref=e377]
+              - generic [ref=e379]:
+                - text: Previous
+                - text: 12. Submodules & Large Repos
+            - link "Next 11. Troubleshooting" [ref=e380] [cursor=pointer]:
+              - /url: /git-primer/troubleshooting/
+              - img [ref=e381]
+              - generic [ref=e383]:
+                - text: Next
+                - text: 11. Troubleshooting
+  - generic [ref=e386]:
+    - button "Menu" [ref=e387]:
+      - img [ref=e389]
+      - generic: Menu
+    - button "Inspect" [ref=e393]:
+      - img [ref=e395]
+      - generic: Inspect
+    - button "Audit" [ref=e397]:
+      - img [ref=e399]
+      - generic: Audit
+    - button "Settings" [ref=e402]:
+      - img [ref=e404]
+      - generic: Settings

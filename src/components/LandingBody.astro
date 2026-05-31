@@ -1,31 +1,5 @@
 ---
-import CommitFlow from "./CommitFlow.svelte";
-
 const base = "/git-primer";
-
-const features = [
-  {
-    kicker: "play, don't skim",
-    title: "Interactive, not static",
-    body: "Branching, merging, rebasing, remotes and the commit chain are live demos you step through, scrub, and autoplay. No more squinting at screenshots.",
-    span: true,
-  },
-  {
-    kicker: "0 to advanced",
-    title: "Beginner to advanced",
-    body: "Fifteen chapters, from your first commit to recovering lost work and team workflows.",
-  },
-  {
-    kicker: "modern git",
-    title: "Up to date",
-    body: "Built around switch, restore, LFS, hooks and current platform practices.",
-  },
-  {
-    kicker: "real terminal",
-    title: "Hands-on",
-    body: "Every chapter nudges you to run the commands yourself in a real repository.",
-  },
-];
 
 const chapters = [
   { n: 1, title: "Introduction to Git", slug: "introduction" },
@@ -49,70 +23,32 @@ const chapters = [
 <section class="lb">
   <header class="lb__head">
     <p class="lb__kicker">Why this book</p>
-    <h2 class="lb__title">Built to be played with, not just read</h2>
     <p class="lb__lead">
-      Git is powerful, but its many features feel overwhelming at first. Instead
-      of walls of text, the tricky concepts here come as animations you can
-      control, so the mental model actually sticks.
+      Git is powerful but overwhelming at first, so the tricky parts come as
+      animations you can play with until the mental model actually sticks.
     </p>
   </header>
 
-  <div class="bento">
+  <ol class="chapters">
     {
-      features.map((f) => (
-        <article class={`tile${f.span ? " tile--wide" : ""}`}>
-          <span class="tile__kicker">{f.kicker}</span>
-          <h3 class="tile__title">{f.title}</h3>
-          <p class="tile__body">{f.body}</p>
-        </article>
+      chapters.map((c) => (
+        <li>
+          <a href={`${base}/${c.slug}/`} class="chip">
+            <span class="chip__n">{String(c.n).padStart(2, "0")}</span>
+            <span class="chip__t">{c.title}</span>
+            <span class="chip__arrow">&rarr;</span>
+          </a>
+        </li>
       ))
     }
-  </div>
-
-  <div class="demo-band">
-    <div class="demo-band__intro">
-      <p class="lb__kicker">See it in action</p>
-      <h2 class="lb__title">From edit to commit, live</h2>
-      <p class="lb__lead">
-        This is one of the eleven playable demos in the book. Step through how a
-        change moves from your working directory all the way to the remote.
-      </p>
-    </div>
-    <div class="demo-band__demo">
-      <CommitFlow client:visible />
-    </div>
-  </div>
-
-  <div class="curriculum">
-    <p class="lb__kicker">The path</p>
-    <h2 class="lb__title">Fifteen chapters, one clear route</h2>
-    <ol class="chapters">
-      {
-        chapters.map((c) => (
-          <li>
-            <a href={`${base}/${c.slug}/`} class="chip">
-              <span class="chip__n">{String(c.n).padStart(2, "0")}</span>
-              <span class="chip__t">{c.title}</span>
-              <span class="chip__arrow">&rarr;</span>
-            </a>
-          </li>
-        ))
-      }
-    </ol>
-  </div>
-
-  <div class="cta">
-    <h2>Ready to debunk Git?</h2>
-    <p>Start with Chapter 1. No setup required, just your curiosity.</p>
-    <a class="cta__btn" href={`${base}/introduction/`}>Start the course &rarr;</a>
-  </div>
+  </ol>
 </section>
 
 <style>
   .lb {
     display: flex;
     flex-direction: column;
-    gap: clamp(3rem, 7vw, 5rem);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
     margin-top: 1rem;
   }
   .lb__kicker {
@@ -123,132 +59,17 @@ const chapters = [
     color: var(--git-orange);
     margin: 0 0 0.6rem;
   }
-  .lb__title {
-    font-size: clamp(1.6rem, 1rem + 2.5vw, 2.4rem);
-    line-height: 1.1;
-    font-weight: 700;
-    margin: 0 0 0.75rem;
-    border: none;
-    padding: 0;
-  }
   .lb__lead {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
+    line-height: 1.5;
     color: var(--sl-color-gray-2);
-    max-width: 60ch;
+    max-width: 64ch;
     margin: 0;
   }
 
-  /* Bento feature grid */
-  .bento {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  @media (min-width: 50rem) {
-    .bento {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .tile--wide {
-      grid-column: span 3;
-    }
-  }
-  .tile {
-    position: relative;
-    padding: 1.5rem;
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: 1rem;
-    background:
-      radial-gradient(
-        140% 120% at 0% 0%,
-        color-mix(in srgb, var(--git-orange) 9%, transparent),
-        transparent 55%
-      ),
-      var(--sl-color-black);
-    overflow: hidden;
-    transition:
-      transform 0.18s ease,
-      border-color 0.18s ease,
-      box-shadow 0.25s ease;
-  }
-  .tile::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 3px;
-    background: linear-gradient(
-      90deg,
-      var(--git-orange),
-      var(--git-orange-soft),
-      transparent
-    );
-    opacity: 0.8;
-  }
-  .tile:hover {
-    transform: translateY(-4px);
-    border-color: color-mix(in srgb, var(--git-orange) 55%, transparent);
-    box-shadow: 0 22px 45px -28px color-mix(in srgb, var(--git-orange) 80%, #000);
-  }
-  .tile--wide {
-    background:
-      radial-gradient(
-        90% 140% at 100% 0%,
-        color-mix(in srgb, var(--git-orange) 14%, transparent),
-        transparent 55%
-      ),
-      var(--sl-color-black);
-  }
-  .tile__kicker {
-    font-family: var(--__sl-font-mono, monospace);
-    font-size: 0.72rem;
-    color: var(--git-orange);
-    letter-spacing: 0.02em;
-  }
-  .tile__title {
-    font-size: 1.25rem;
-    margin: 0.4rem 0 0.5rem;
-    border: none;
-    padding: 0;
-  }
-  .tile--wide .tile__title {
-    font-size: 1.6rem;
-  }
-  .tile__body {
-    margin: 0;
-    color: var(--sl-color-gray-2);
-    font-size: 0.95rem;
-    max-width: 60ch;
-  }
-
-  /* Live demo band */
-  .demo-band {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem 2.5rem;
-    align-items: center;
-    padding: clamp(1.5rem, 3vw, 2.5rem);
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: 1.25rem;
-    background:
-      radial-gradient(
-        120% 120% at 100% 0%,
-        color-mix(in srgb, var(--git-orange) 10%, transparent),
-        transparent 60%
-      ),
-      var(--sl-color-black);
-  }
-  @media (min-width: 56rem) {
-    .demo-band {
-      grid-template-columns: 4fr 6fr;
-    }
-  }
-  .demo-band__demo :global(.git-demo) {
-    margin: 0;
-  }
-
-  /* Curriculum */
   .chapters {
     list-style: none;
-    margin: 1.5rem 0 0;
+    margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: 1fr;
@@ -302,47 +123,5 @@ const chapters = [
   .chip:hover .chip__arrow {
     color: var(--git-orange);
     transform: translateX(3px);
-  }
-
-  /* CTA */
-  .cta {
-    text-align: center;
-    padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
-    border-radius: 1.5rem;
-    background:
-      radial-gradient(
-        100% 140% at 50% 0%,
-        color-mix(in srgb, var(--git-orange) 18%, transparent),
-        transparent 65%
-      ),
-      var(--sl-color-black);
-    border: 1px solid color-mix(in srgb, var(--git-orange) 30%, transparent);
-  }
-  .cta h2 {
-    font-size: clamp(1.6rem, 1rem + 2.5vw, 2.4rem);
-    margin: 0 0 0.5rem;
-    border: none;
-    padding: 0;
-  }
-  .cta p {
-    color: var(--sl-color-gray-2);
-    margin: 0 0 1.75rem;
-  }
-  .cta__btn {
-    display: inline-block;
-    padding: 0.85rem 1.75rem;
-    border-radius: 999px;
-    background: var(--git-orange);
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 12px 30px -12px color-mix(in srgb, var(--git-orange) 80%, #000);
-    transition:
-      transform 0.16s ease,
-      background 0.2s ease;
-  }
-  .cta__btn:hover {
-    transform: translateY(-2px);
-    background: var(--git-orange-soft);
   }
 </style>

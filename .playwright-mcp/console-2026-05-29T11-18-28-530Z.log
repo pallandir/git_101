@@ -1,0 +1,5 @@
+[      62ms] [LOG] [astro-mermaid] No mermaid diagrams found on initial load @ http://localhost:4321/@id/astro:scripts/page.js:2
+[      63ms] [LOG] [astro-mermaid] Initializing mermaid diagrams... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[      63ms] [LOG] [astro-mermaid] Found 0 mermaid diagrams @ http://localhost:4321/@id/astro:scripts/page.js:2
+[      63ms] [LOG] [astro-mermaid] Initializing mermaid diagrams... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[      63ms] [LOG] [astro-mermaid] Found 0 mermaid diagrams @ http://localhost:4321/@id/astro:scripts/page.js:2

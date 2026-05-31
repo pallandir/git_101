@@ -4,6 +4,7 @@ description: The Git object model, content-addressable storage, packfiles, the .
 ---
 
 import ObjectModel from '../../components/ObjectModel.svelte';
+import ObjectGraph from '../../components/ObjectGraph.svelte';
 import HashObject from '../../components/HashObject.svelte';
 import Packfile from '../../components/Packfile.svelte';
 import CommitBlockchain from '../../components/CommitBlockchain.svelte';
@@ -74,16 +75,7 @@ Many tools (like Subversion) think in terms of **diffs**: they store the origina
 
 Git thinks in **snapshots**. Every time you commit, Git records what all your tracked files look like at that moment (a tree of blobs) and stores a reference to that snapshot. It's like a stream of mini filesystems, one per commit.
 
-```mermaid
-flowchart LR
-    C1["commit 1"] --> T1["tree"]
-    C2["commit 2"] --> T2["tree"]
-    T1 --> B1["blob: README"]
-    T1 --> B2["blob: app.js (v1)"]
-    T2 --> B1
-    T2 --> B3["blob: app.js (v2)"]
-    C1 -. parent .- C2
-```
+<ObjectGraph client:visible />
 
 Because of content-addressing, a file that did not change between two commits is **not** stored twice. Both trees just point at the identical blob (notice how both trees above reuse the same README blob). So snapshots stay lightweight even on large projects.
 

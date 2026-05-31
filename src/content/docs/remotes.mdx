@@ -4,6 +4,7 @@ description: Connect to remotes, push and fetch changes, pull updates, and contr
 ---
 
 import RemoteSync from '../../components/RemoteSync.svelte';
+import RemotePushPull from '../../components/RemotePushPull.svelte';
 
 ## The push / fetch / pull cycle at a glance
 
@@ -15,14 +16,7 @@ Working with a remote is really just moving commits between two repositories: yo
 
 To work with a remote repository, Git needs to know where your code is hosted. You can configure one or more remote URLs in your repository. Each remote is assigned an alias to reference it easily instead of using the full URL.
 
-```mermaid
-sequenceDiagram
-    participant L as Local repository
-    participant R as Remote (origin)
-    L->>R: git push (send my commits)
-    R-->>L: git fetch (download their commits)
-    R-->>L: git pull (fetch + merge in one step)
-```
+<RemotePushPull client:visible />
 
 ### Adding a remote
 

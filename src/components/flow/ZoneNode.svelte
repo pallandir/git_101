@@ -12,9 +12,14 @@
   let zone = $derived(vis?.zones?.[index] ?? {});
   let active = $derived(!!zone.active);
   let card = $derived(zone.card ?? null);
+  let accent = $derived(data.accent ?? null);
 </script>
 
-<div class="zone" class:zone--active={active}>
+<div
+  class="zone"
+  class:zone--active={active}
+  style={accent ? `--zone-accent:${accent}` : undefined}
+>
   <Handle
     type="target"
     position={Position.Left}
@@ -68,9 +73,9 @@
   }
   .zone--active {
     border-style: solid;
-    border-color: var(--git-orange);
-    background: color-mix(in srgb, var(--git-orange) 8%, transparent);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--git-orange) 22%, transparent);
+    border-color: var(--zone-accent, var(--git-orange));
+    background: color-mix(in srgb, var(--zone-accent, var(--git-orange)) 8%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--zone-accent, var(--git-orange)) 22%, transparent);
   }
   .zone__head {
     display: flex;
@@ -89,7 +94,7 @@
     transition: background 0.3s ease;
   }
   .zone--active .zone__dot {
-    background: var(--git-orange);
+    background: var(--zone-accent, var(--git-orange));
   }
   .zone__label {
     font-size: 1.05rem;

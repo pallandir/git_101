@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { SvelteFlow, Background, BackgroundVariant } from "@xyflow/svelte";
+  import { SvelteFlow } from "@xyflow/svelte";
   import "@xyflow/svelte/dist/style.css";
   import GitDemo from "./GitDemo.svelte";
   import CommitBlock from "./flow/CommitBlock.svelte";
@@ -222,7 +222,6 @@
         maxZoom={1.4}
         proOptions={{ hideAttribution: true }}
       >
-        <Background variant={BackgroundVariant.Dots} gap={20} size={1} />
         <FitViewport trigger={chain.length} />
       </SvelteFlow>
     {:else}
@@ -251,7 +250,13 @@
     color: var(--sl-color-gray-3);
   }
   .chain :global(.svelte-flow) {
-    background: var(--sl-color-black);
+    background-color: var(--sl-color-black);
+    background-image: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--sl-color-white) 7%, transparent) 1px,
+      transparent 1.5px
+    );
+    background-size: 20px 20px;
   }
   .chain :global(.svelte-flow__edge-path) {
     stroke: var(--git-orange);

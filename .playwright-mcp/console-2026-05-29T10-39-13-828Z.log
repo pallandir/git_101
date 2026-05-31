@@ -1,0 +1,36 @@
+[     120ms] [LOG] [astro-mermaid] Mermaid diagrams detected on initial load @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     120ms] [LOG] [astro-mermaid] Initializing mermaid diagrams... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     120ms] [LOG] [astro-mermaid] Found 1 mermaid diagrams @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     120ms] [LOG] [astro-mermaid] Loading mermaid.js... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     120ms] [LOG] [astro-mermaid] Initializing mermaid diagrams... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     120ms] [LOG] [astro-mermaid] Found 1 mermaid diagrams @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     121ms] [LOG] [astro-mermaid] Initializing mermaid diagrams... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     121ms] [LOG] [astro-mermaid] Found 1 mermaid diagrams @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     154ms] [LOG] [astro-mermaid] Using theme: dark from html @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     156ms] [LOG] [astro-mermaid] Rendering diagram: mermaid-3w8bwjy38 @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     157ms] [LOG] [astro-mermaid] Using theme: dark from html @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     158ms] [LOG] [astro-mermaid] Rendering diagram: mermaid-9vuh9ad7g @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     158ms] [LOG] [astro-mermaid] Using theme: dark from html @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     158ms] [LOG] [astro-mermaid] Rendering diagram: mermaid-8tv0m922d @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     178ms] [WARNING] Use $state.raw for nodes to prevent performance issues. @ http://localhost:4321/node_modules/.vite/deps/@xyflow_svelte.js?v=ccdc6a10:4718
+[     223ms] [LOG] [astro-mermaid] Successfully rendered diagram: mermaid-3w8bwjy38 @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     238ms] [LOG] [astro-mermaid] Successfully rendered diagram: mermaid-9vuh9ad7g @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     249ms] [LOG] [astro-mermaid] Successfully rendered diagram: mermaid-8tv0m922d @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45233ms] [LOG] [astro-mermaid] Mermaid diagrams detected on initial load @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45233ms] [LOG] [astro-mermaid] Initializing mermaid diagrams... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45233ms] [LOG] [astro-mermaid] Found 1 mermaid diagrams @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45233ms] [LOG] [astro-mermaid] Loading mermaid.js... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45234ms] [LOG] [astro-mermaid] Initializing mermaid diagrams... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45234ms] [LOG] [astro-mermaid] Found 1 mermaid diagrams @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45234ms] [LOG] [astro-mermaid] Initializing mermaid diagrams... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45234ms] [LOG] [astro-mermaid] Found 1 mermaid diagrams @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45254ms] [LOG] [astro-mermaid] Using theme: dark from html @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45255ms] [LOG] [astro-mermaid] Rendering diagram: mermaid-odgo1xy8b @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45256ms] [LOG] [astro-mermaid] Using theme: dark from html @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45257ms] [LOG] [astro-mermaid] Rendering diagram: mermaid-9nihdmlxn @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45257ms] [LOG] [astro-mermaid] Using theme: dark from html @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45257ms] [LOG] [astro-mermaid] Rendering diagram: mermaid-tzmxzkeow @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45285ms] [LOG] [astro-mermaid] Successfully rendered diagram: mermaid-odgo1xy8b @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45289ms] [WARNING] Use $state.raw for nodes to prevent performance issues. @ http://localhost:4321/node_modules/.vite/deps/@xyflow_svelte.js?v=ccdc6a10:4718
+[   45306ms] [LOG] [astro-mermaid] Successfully rendered diagram: mermaid-9nihdmlxn @ http://localhost:4321/@id/astro:scripts/page.js:2
+[   45321ms] [LOG] [astro-mermaid] Successfully rendered diagram: mermaid-tzmxzkeow @ http://localhost:4321/@id/astro:scripts/page.js:2

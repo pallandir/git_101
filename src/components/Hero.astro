@@ -1,79 +1,66 @@
 ---
 import { LinkButton } from "@astrojs/starlight/components";
-import HeroGraph from "./HeroGraph.svelte";
+import HeroStage from "./HeroStage.svelte";
 
 const { data } = Astro.locals.starlightRoute.entry;
 const { title = data.title, tagline, actions = [] } = data.hero || {};
 ---
 
 <div class="hero-wrap">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">
-        <span class="eyebrow__dot"></span> Interactive Git course
-      </p>
-      <h1 id="_top" data-page-title set:html={title} />
-      {tagline && <p class="tagline" set:html={tagline} />}
-      {
-        actions.length > 0 && (
-          <div class="actions">
-            {actions.map(
-              ({
-                attrs: { class: className, ...attrs } = {},
-                icon,
-                link: href,
-                text,
-                variant,
-              }) => (
-                <LinkButton
-                  {href}
-                  {variant}
-                  icon={icon?.name}
-                  class:list={[className]}
-                  {...attrs}
-                >
-                  {text}
-                  {icon?.html && <Fragment set:html={icon.html} />}
-                </LinkButton>
-              ),
-            )}
-          </div>
-        )
-      }
-      <ul class="hero-meta">
-        <li><strong>15</strong> chapters</li>
-        <li><strong>11</strong> playable demos</li>
-        <li>beginner <span>&rarr;</span> advanced</li>
-      </ul>
-    </div>
+  <div class="hero-head">
+    <p class="eyebrow">
+      <span class="eyebrow__dot"></span> Interactive Git course
+    </p>
+    <h1 id="_top" data-page-title set:html={title} />
+    {tagline && <p class="tagline" set:html={tagline} />}
+    {
+      actions.length > 0 && (
+        <div class="actions">
+          {actions.map(
+            ({
+              attrs: { class: className, ...attrs } = {},
+              icon,
+              link: href,
+              text,
+              variant,
+            }) => (
+              <LinkButton
+                {href}
+                {variant}
+                icon={icon?.name}
+                class:list={[className]}
+                {...attrs}
+              >
+                {text}
+                {icon?.html && <Fragment set:html={icon.html} />}
+              </LinkButton>
+            ),
+          )}
+        </div>
+      )
+    }
+    <ul class="hero-meta">
+      <li><strong>15</strong> chapters</li>
+      <li><strong>11</strong> playable demos</li>
+      <li>beginner <span>&rarr;</span> advanced</li>
+    </ul>
+  </div>
 
-    <div class="hero-stage">
-      <div class="hero-stage__glow"></div>
-      <div class="hero-stage__chrome">
-        <span class="dotbar"><i></i><i></i><i></i></span>
-        <code>git log --graph --oneline</code>
-      </div>
-      <div class="hero-stage__canvas">
-        <HeroGraph client:only="svelte" />
-      </div>
-    </div>
+  <div class="hero-stage-wrap">
+    <HeroStage client:only="svelte" />
   </div>
 </div>
 
 <style>
   .hero-wrap {
-    padding-block: clamp(1.5rem, 4vw, 4rem);
+    padding-block: clamp(1.5rem, 4vw, 3.5rem);
   }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: clamp(2rem, 5vw, 3.5rem);
+  .hero-head {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-  }
-  @media (min-width: 56rem) {
-    .hero-grid {
-      grid-template-columns: 5fr 6fr;
-    }
+    text-align: center;
+    margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
   }
 
   .eyebrow {
@@ -107,9 +94,9 @@ const { title = data.title, tagline, actions = [] } = data.hero || {};
     }
   }
 
-  .hero-copy h1 {
-    font-size: clamp(2.3rem, 1rem + 5vw, 4rem);
-    line-height: 1.05;
+  .hero-head h1 {
+    font-size: clamp(2.5rem, 1rem + 6vw, 4.75rem);
+    line-height: 1.04;
     font-weight: 700;
     margin: 0 0 1rem;
     background: linear-gradient(
@@ -125,18 +112,20 @@ const { title = data.title, tagline, actions = [] } = data.hero || {};
   .tagline {
     font-size: clamp(1rem, 0.9rem + 0.6vw, 1.3rem);
     color: var(--sl-color-gray-2);
-    max-width: 42ch;
+    max-width: 52ch;
     margin: 0 0 1.75rem;
   }
   .actions {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.85rem 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
   }
   .hero-meta {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
     list-style: none;
     padding: 0;
@@ -153,63 +142,10 @@ const { title = data.title, tagline, actions = [] } = data.hero || {};
     color: var(--git-orange);
   }
 
-  .hero-stage {
+  /* Break the stage out wider than the prose column for an immersive feel. */
+  .hero-stage-wrap {
     position: relative;
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: 1rem;
-    background:
-      radial-gradient(
-        120% 120% at 80% 0%,
-        color-mix(in srgb, var(--git-orange) 12%, transparent),
-        transparent 60%
-      ),
-      var(--sl-color-black);
-    overflow: hidden;
-    box-shadow:
-      0 30px 60px -30px rgba(0, 0, 0, 0.6),
-      inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  }
-  .hero-stage__glow {
-    position: absolute;
-    inset: -40% 30% auto -10%;
-    height: 60%;
-    background: radial-gradient(
-      closest-side,
-      color-mix(in srgb, var(--git-orange) 35%, transparent),
-      transparent
-    );
-    filter: blur(40px);
-    pointer-events: none;
-  }
-  .hero-stage__chrome {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.7rem 1rem;
-    border-bottom: 1px solid var(--sl-color-gray-5);
-    background: color-mix(in srgb, var(--sl-color-black) 60%, transparent);
-  }
-  .hero-stage__chrome code {
-    font-size: 0.8rem;
-    color: var(--sl-color-gray-3);
-  }
-  .dotbar {
-    display: inline-flex;
-    gap: 0.4rem;
-  }
-  .dotbar i {
-    width: 0.7rem;
-    height: 0.7rem;
-    border-radius: 50%;
-    background: var(--sl-color-gray-5);
-  }
-  .dotbar i:first-child {
-    background: var(--git-orange);
-  }
-  .hero-stage__canvas {
-    position: relative;
-    aspect-ratio: 7 / 3;
-    min-height: 220px;
-    padding: 0.5rem 0.75rem;
+    width: min(100vw - 2rem, 64rem);
+    margin-inline: calc(50% - min(50vw - 1rem, 32rem));
   }
 </style>

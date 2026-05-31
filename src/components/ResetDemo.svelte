@@ -3,9 +3,12 @@
   import { backOut } from "svelte/easing";
   import GitDemo from "./GitDemo.svelte";
   import CommitGraph from "./CommitGraph.svelte";
-  import { colX, laneY, DUR } from "./flow/graph.js";
+  import { laneY, DUR } from "./flow/graph.js";
 
   const commits = ["C1", "C2", "C3", "C4"];
+  const COL_X0 = 74;
+  const COL_STEP = 150;
+  const colAt = (i) => COL_X0 + i * COL_STEP;
 
   let head = $state(3);
   let mode = $state("clean"); // clean | staged | discarded
@@ -38,7 +41,7 @@
   let nodes = $derived(
     commits.map((id, i) => ({
       id,
-      x: colX(i),
+      x: colAt(i),
       y: laneY("main"),
       variant: "main",
       ghost: i > head,
@@ -57,6 +60,16 @@
 
   let pointers = $derived([
     { key: "head", label: "HEAD", at: commits[head], variant: "head" },
+    ...(mode !== "clean" && head < commits.length - 1
+      ? [
+          {
+            key: "fate",
+            label: mode === "staged" ? "kept → staged" : "discarded",
+            at: commits[head + 1],
+            variant: mode === "staged" ? "feature" : "detached",
+          },
+        ]
+      : []),
   ]);
 </script>
 
@@ -75,7 +88,7 @@
     </div>
   {/snippet}
 
-  <CommitGraph {nodes} {edges} {pointers} width={380} height={155} label="HEAD movement during git reset" />
+  <CommitGraph {nodes} {edges} {pointers} width={600} height={170} label="HEAD movement during git reset" />
 
   <div class="state">
     <span class="state__label">Working directory / staging:</span>

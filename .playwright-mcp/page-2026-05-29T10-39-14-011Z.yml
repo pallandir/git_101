@@ -1,0 +1,696 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#_top"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Git logo A brief debunk of Git" [ref=e7] [cursor=pointer]:
+          - /url: /git-primer/
+          - img "Git logo" [ref=e8]
+          - generic [ref=e9]: A brief debunk of Git
+        - button "Search" [ref=e12] [cursor=pointer]:
+          - img [ref=e13]
+          - generic [ref=e15]: Search
+          - generic [ref=e16]:
+            - generic [ref=e17]: ⌘
+            - generic [ref=e18]: K
+        - generic [ref=e19]:
+          - link "GitHub" [ref=e21] [cursor=pointer]:
+            - /url: https://github.com/pallandir/git-primer
+            - generic [ref=e22]: GitHub
+            - img [ref=e23]
+          - generic [ref=e26]:
+            - generic [ref=e27]: Select theme
+            - img
+            - combobox "Select theme" [ref=e28] [cursor=pointer]:
+              - option "Dark" [selected]
+              - option "Light"
+              - option "Auto"
+            - img
+    - navigation "Main":
+      - list [ref=e32]:
+        - listitem [ref=e33]:
+          - group [ref=e34]:
+            - generic "Start here" [ref=e35] [cursor=pointer]:
+              - generic [ref=e36]: Start here
+              - img [ref=e37]
+            - list [ref=e39]:
+              - listitem [ref=e40]:
+                - link "Welcome" [ref=e41] [cursor=pointer]:
+                  - /url: /git-primer/
+              - listitem [ref=e42]:
+                - link "1. Introduction to Git" [ref=e43] [cursor=pointer]:
+                  - /url: /git-primer/introduction/
+              - listitem [ref=e44]:
+                - link "2. Setting Up a Repository" [ref=e45] [cursor=pointer]:
+                  - /url: /git-primer/setup/
+        - listitem [ref=e46]:
+          - group [ref=e47]:
+            - generic "Everyday Git" [ref=e48] [cursor=pointer]:
+              - generic [ref=e49]: Everyday Git
+              - img [ref=e50]
+            - list [ref=e52]:
+              - listitem [ref=e53]:
+                - link "3. Basic Git Workflow" [ref=e54] [cursor=pointer]:
+                  - /url: /git-primer/basic-workflow/
+              - listitem [ref=e55]:
+                - link "4. Working with Branches" [ref=e56] [cursor=pointer]:
+                  - /url: /git-primer/branches/
+              - listitem [ref=e57]:
+                - link "5. Remote Repositories" [ref=e58] [cursor=pointer]:
+                  - /url: /git-primer/remotes/
+              - listitem [ref=e59]:
+                - link "6. Undoing Changes" [ref=e60] [cursor=pointer]:
+                  - /url: /git-primer/undoing-changes/
+        - listitem [ref=e61]:
+          - group [ref=e62]:
+            - generic "Under the Hood" [ref=e63] [cursor=pointer]:
+              - generic [ref=e64]: Under the Hood
+              - img [ref=e65]
+            - list [ref=e67]:
+              - listitem [ref=e68]:
+                - link "7. Understanding Git Internals" [ref=e69] [cursor=pointer]:
+                  - /url: /git-primer/internals/
+        - listitem [ref=e70]:
+          - group [ref=e71]:
+            - generic "Advanced Git" [ref=e72] [cursor=pointer]:
+              - generic [ref=e73]: Advanced Git
+              - img [ref=e74]
+            - list [ref=e76]:
+              - listitem [ref=e77]:
+                - link "8. Advanced Git Commands" [ref=e78] [cursor=pointer]:
+                  - /url: /git-primer/advanced-commands/
+              - listitem [ref=e79]:
+                - link "9. Git Hooks & Automation" [ref=e80] [cursor=pointer]:
+                  - /url: /git-primer/hooks-automation/
+              - listitem [ref=e81]:
+                - link "12. Submodules & Large Repos" [ref=e82] [cursor=pointer]:
+                  - /url: /git-primer/submodules-large-repos/
+        - listitem [ref=e83]:
+          - group [ref=e84]:
+            - generic "Working Well" [ref=e85] [cursor=pointer]:
+              - generic [ref=e86]: Working Well
+              - img [ref=e87]
+            - list [ref=e89]:
+              - listitem [ref=e90]:
+                - link "10. Git Best Practices" [ref=e91] [cursor=pointer]:
+                  - /url: /git-primer/best-practices/
+              - listitem [ref=e92]:
+                - link "11. Troubleshooting" [ref=e93] [cursor=pointer]:
+                  - /url: /git-primer/troubleshooting/
+              - listitem [ref=e94]:
+                - link "13. Git with Other Tools" [ref=e95] [cursor=pointer]:
+                  - /url: /git-primer/other-tools/
+              - listitem [ref=e96]:
+                - link "14. Real-World Scenarios" [ref=e97] [cursor=pointer]:
+                  - /url: /git-primer/real-world-scenarios/
+        - listitem [ref=e98]:
+          - group [ref=e99]:
+            - generic "Keep Learning" [ref=e100] [cursor=pointer]:
+              - generic [ref=e101]: Keep Learning
+              - img [ref=e102]
+            - list [ref=e104]:
+              - listitem [ref=e105]:
+                - link "15. Learning Resources" [ref=e106] [cursor=pointer]:
+                  - /url: /git-primer/resources/
+    - main [ref=e110]:
+      - heading "7. Understanding Git Internals" [level=1] [ref=e113]
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - heading "The Git object model (blobs, trees, commits)" [level=2] [ref=e118]
+            - link "Section titled “The Git object model (blobs, trees, commits)”" [ref=e119] [cursor=pointer]:
+              - /url: "#the-git-object-model-blobs-trees-commits"
+              - img [ref=e121]
+              - generic [ref=e123]: Section titled “The Git object model (blobs, trees, commits)”
+          - paragraph [ref=e124]: From this point on, we’ll dive into more advanced Git concepts. If you need more time, feel free to review Chapters 1 to 6 before proceeding.
+          - paragraph [ref=e125]:
+            - text: The beauty of Git lies in its ability to handle complex operations while maintaining a simple core. At its foundation, Git stores everything as one of just
+            - strong [ref=e126]: four object types
+            - text: ":"
+          - list [ref=e127]:
+            - listitem [ref=e128]:
+              - strong [ref=e129]:
+                - code [ref=e130]: blob
+              - text: stores the
+              - strong [ref=e131]: content of a file
+              - text: . It does not record the filename or where the file lives, only the bytes inside it.
+            - listitem [ref=e132]:
+              - strong [ref=e133]:
+                - code [ref=e134]: tree
+              - text: represents a
+              - strong [ref=e135]: directory
+              - text: . It maps names to the blobs (files) and other trees (subdirectories) it contains.
+            - listitem [ref=e136]:
+              - strong [ref=e137]:
+                - code [ref=e138]: commit
+              - text: points to
+              - strong [ref=e139]: one tree
+              - text: "(a full snapshot of your project) plus metadata: author, committer, message, and the hash of its parent commit(s)."
+            - listitem [ref=e140]:
+              - strong [ref=e141]:
+                - code [ref=e142]: tag
+              - text: marks a specific commit as important, usually a release. A
+              - strong [ref=e143]: lightweight
+              - text: tag is just a named pointer; an
+              - strong [ref=e144]: annotated
+              - text: tag is its own object with author, date, and a message.
+          - paragraph [ref=e145]:
+            - text: "Every object, whatever its type, is made of three things: a"
+            - strong [ref=e146]: type
+            - text: ", the"
+            - strong [ref=e147]: size
+            - text: of its content, and the
+            - strong [ref=e148]: content
+            - text: "itself. That uniformity is what keeps the core so small. Step through how a single commit references your whole project:"
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - generic [ref=e153]:
+                - generic [ref=e154]:
+                  - button "Previous step" [disabled] [ref=e155]: ◂ Prev
+                  - button "Commit ▸" [ref=e156] [cursor=pointer]
+                  - button "Restart" [disabled] [ref=e157]: ↺ Restart
+                - generic [ref=e158]:
+                  - slider "Timeline scrubber" [ref=e159] [cursor=pointer]: "0"
+                  - generic [ref=e160]: 1 / 4
+              - generic [ref=e161]:
+                - generic [ref=e162]: Step 1 of 4
+                - paragraph [ref=e163]: Press play, or step forward, to peel back the three object types behind one commit.
+            - img "A commit pointing to its tree, which points to blobs" [ref=e166]:
+              - paragraph [ref=e168]: Press play, or step forward, to peel back the layers of a commit.
+          - paragraph [ref=e169]:
+            - text: Together these objects form a
+            - strong [ref=e170]: versioned filesystem
+            - text: "layered on top of your real one. That is the whole trick: Git is a content tracker built from four tiny building blocks."
+          - generic [ref=e171]:
+            - heading "Everything is content-addressed" [level=2] [ref=e172]
+            - link "Section titled “Everything is content-addressed”" [ref=e173] [cursor=pointer]:
+              - /url: "#everything-is-content-addressed"
+              - img [ref=e175]
+              - generic [ref=e177]: Section titled “Everything is content-addressed”
+          - paragraph [ref=e178]:
+            - text: "Here is the idea that ties the whole object model together: Git stores each object under a name"
+            - strong [ref=e179]: computed from its content
+            - text: . That name is the SHA-1 hash of the object’s header (
+            - code [ref=e180]: <type> <size>\0
+            - text: ) followed by its content. This is called
+            - strong [ref=e181]: content-addressable storage
+            - text: .
+          - paragraph [ref=e182]:
+            - text: You can compute it yourself with the plumbing command
+            - code [ref=e183]: git hash-object
+            - text: ":"
+          - figure "Terminal window" [ref=e185]:
+            - generic [ref=e188]: Terminal window
+            - code [ref=e190]:
+              - generic [ref=e192]: printf 'Hello, Git!\n' | git hash-object --stdin
+              - generic [ref=e194]: "# 670a245535fe6316eb2316c1103b1a88bb519334"
+            - button "Copy to clipboard" [ref=e196] [cursor=pointer]
+          - paragraph [ref=e198]:
+            - text: Try it live below. Edit the content and watch the object id change. This computes the
+            - strong [ref=e199]: exact
+            - text: "id that real Git would use, byte for byte:"
+          - generic [ref=e201]:
+            - paragraph [ref=e204]: Edit the content. The hash is computed live, and it matches what real Git would store, byte for byte.
+            - generic [ref=e206]:
+              - generic [ref=e207]:
+                - generic [ref=e208]:
+                  - generic [ref=e209]: content
+                  - textbox "Content to hash" [ref=e210]: Hello, Git!
+                - generic [ref=e211]:
+                  - generic [ref=e212]: SHA-1
+                  - generic [ref=e213]: (
+                  - generic [ref=e214]: "\"blob 12\\0\""
+                  - generic [ref=e215]: +
+                  - generic [ref=e216]: content
+                  - generic [ref=e217]: )
+              - generic [ref=e218]:
+                - generic [ref=e219]: object id (SHA-1)
+                - code [ref=e220]
+                - paragraph [ref=e221]:
+                  - text: The first
+                  - strong [ref=e222]: 7 characters
+                  - text: are the short hash you usually see. Type the exact same content again, anywhere on earth, and you get the exact same id. That is how Git deduplicates files and detects corruption.
+          - paragraph [ref=e223]: "Two consequences fall out of this, and they explain a lot of Git’s behavior:"
+          - list [ref=e224]:
+            - listitem [ref=e225]:
+              - strong [ref=e226]: Identical content is stored once.
+              - text: If two files (or the same file across many commits) have the same bytes, they hash to the same id, so Git keeps a single blob and everything points at it. That is why committing an unchanged file again costs nothing.
+            - listitem [ref=e227]:
+              - strong [ref=e228]: Tampering is detectable.
+              - text: Change one byte and the hash changes. Since an object’s name
+              - emphasis [ref=e229]: is
+              - text: its fingerprint, you cannot quietly alter stored content without Git noticing.
+          - paragraph [ref=e230]:
+            - text: To look inside any object by its id, use
+            - code [ref=e231]: git cat-file
+            - text: ":"
+          - figure "Terminal window" [ref=e233]:
+            - generic [ref=e236]: Terminal window
+            - code [ref=e238]:
+              - generic [ref=e240]: "git cat-file -t 670a2455 # -t prints the TYPE: blob"
+              - generic [ref=e242]: "git cat-file -p 670a2455 # -p PRETTY-prints the content: Hello, Git!"
+            - button "Copy to clipboard" [ref=e244] [cursor=pointer]
+          - paragraph [ref=e246]: "A commit, printed the same way, is just plain text pointing at a tree and a parent:"
+          - figure "Terminal window" [ref=e248]:
+            - generic [ref=e251]: Terminal window
+            - code [ref=e253]:
+              - generic [ref=e255]: git cat-file -p HEAD
+              - generic [ref=e257]: "# tree 26d3f4bd799ec02f84eb58865f5537a7b1733660"
+              - generic [ref=e259]: "# author tester <a@b.c> 1700000000 +0000"
+              - generic [ref=e261]: "# committer tester <a@b.c> 1700000000 +0000"
+              - generic [ref=e263]: "#"
+              - generic [ref=e265]: "# Add greeting"
+            - button "Copy to clipboard" [ref=e267] [cursor=pointer]
+          - blockquote [ref=e269]:
+            - paragraph [ref=e270]:
+              - text: 💡 The short hashes you see in
+              - code [ref=e271]: git log
+              - text: (like
+              - code [ref=e272]: 670a2455
+              - text: ) are just the first 7 characters of the full 40. Git lets you use any unambiguous prefix, so you rarely type the whole thing.
+          - generic [ref=e273]:
+            - heading "How Git stores changes (snapshots vs. diffs)" [level=2] [ref=e274]
+            - link "Section titled “How Git stores changes (snapshots vs. diffs)”" [ref=e275] [cursor=pointer]:
+              - /url: "#how-git-stores-changes-snapshots-vs-diffs"
+              - img [ref=e277]
+              - generic [ref=e279]: Section titled “How Git stores changes (snapshots vs. diffs)”
+          - paragraph [ref=e280]: This is one of the biggest “aha” moments when learning Git internals, and it’s where Git differs from most older version control systems.
+          - paragraph [ref=e281]:
+            - text: Many tools (like Subversion) think in terms of
+            - strong [ref=e282]: diffs
+            - text: ": they store the original file, then a list of changes (deltas) applied on top of it over time. To know what a file looks like at a given version, the system replays every change from the beginning."
+          - paragraph [ref=e283]:
+            - text: Git thinks in
+            - strong [ref=e284]: snapshots
+            - text: . Every time you commit, Git records what all your tracked files look like at that moment (a tree of blobs) and stores a reference to that snapshot. It’s like a stream of mini filesystems, one per commit.
+          - generic [ref=e285]: "flowchart LR C1[\"commit 1\"] --> T1[\"tree\"] C2[\"commit 2\"] --> T2[\"tree\"] T1 --> B1[\"blob: README\"] T1 --> B2[\"blob: app.js (v1)\"] T2 --> B1 T2 --> B3[\"blob: app.js (v2)\"] C1 -. parent .- C2"
+          - paragraph [ref=e286]:
+            - text: Because of content-addressing, a file that did not change between two commits is
+            - strong [ref=e287]: not
+            - text: stored twice. Both trees just point at the identical blob (notice how both trees above reuse the same README blob). So snapshots stay lightweight even on large projects.
+          - paragraph [ref=e288]:
+            - text: "This is why switching branches or viewing an old version is so fast: Git doesn’t rebuild your files by replaying diffs, it reads the snapshot that already exists. When Git"
+            - emphasis [ref=e289]: shows
+            - text: you a diff (for example in
+            - code [ref=e290]: git log -p
+            - text: ), it computes that difference on the fly by comparing two snapshots. That is a presentation detail, not how the data is stored.
+          - generic [ref=e291]:
+            - 'heading "Packfiles: how snapshots stay small" [level=2] [ref=e292]'
+            - 'link "Section titled “Packfiles: how snapshots stay small”" [ref=e293] [cursor=pointer]':
+              - /url: "#packfiles-how-snapshots-stay-small"
+              - img [ref=e295]
+              - generic [ref=e297]: "Section titled “Packfiles: how snapshots stay small”"
+          - paragraph [ref=e298]: If Git keeps a full snapshot per commit, won’t the repository balloon? This is where the honest, more detailed answer lives, and it’s worth understanding because it reconciles “snapshots” with the reality on disk.
+          - paragraph [ref=e299]:
+            - text: When you first create objects, Git writes each one as its own file,
+            - strong [ref=e300]: zlib-compressed
+            - text: ", under"
+            - code [ref=e301]: .git/objects/
+            - text: . These are called
+            - strong [ref=e302]: loose objects
+            - text: ". The filename is the object’s hash, split so the first two characters are a directory:"
+          - figure "Terminal window" [ref=e304]:
+            - generic [ref=e307]: Terminal window
+            - code [ref=e309]:
+              - generic [ref=e311]: "# the blob for greeting.txt lives at:"
+              - generic [ref=e313]: .git/objects/67/0a245535fe6316eb2316c1103b1a88bb519334
+            - button "Copy to clipboard" [ref=e315] [cursor=pointer]
+          - paragraph [ref=e317]:
+            - text: As history grows, Git periodically runs
+            - strong [ref=e318]: garbage collection
+            - text: (
+            - code [ref=e319]: git gc
+            - text: ", also triggered automatically) and rolls many loose objects into a single"
+            - strong [ref=e320]: packfile
+            - text: ": a"
+            - code [ref=e321]: .pack
+            - text: file holding the objects, plus a
+            - code [ref=e322]: .idx
+            - text: index so Git can still jump straight to any one of them. Inside a pack, similar objects (for example successive versions of the same file) are stored as
+            - strong [ref=e323]: deltas
+            - text: against one another, then compressed.
+          - generic [ref=e325]:
+            - generic [ref=e326]:
+              - generic [ref=e328]:
+                - button "git gc ▸" [ref=e329] [cursor=pointer]
+                - button "↺ Reset" [disabled] [ref=e330]
+              - paragraph [ref=e332]: A fresh repo keeps each object as its own zlib-compressed file under .git/objects/, named by its hash. Run git gc to see what Git does as history grows.
+            - generic [ref=e334]:
+              - generic [ref=e335]:
+                - generic [ref=e336]: commit
+                - generic [ref=e337]: tree
+                - generic [ref=e338]: blob
+              - generic [ref=e339]:
+                - generic [ref=e340]:
+                  - generic [ref=e341]:
+                    - code [ref=e342]: .git/objects/
+                    - generic [ref=e343]: loose
+                  - generic [ref=e344]:
+                    - generic [ref=e345]:
+                      - generic [ref=e346]: commit
+                      - generic [ref=e347]: 9a1f2b
+                    - generic [ref=e348]:
+                      - generic [ref=e349]: tree
+                      - generic [ref=e350]: 4c7e0d
+                    - generic [ref=e351]:
+                      - generic [ref=e352]: blob
+                      - generic [ref=e353]: e21a8f
+                      - generic [ref=e354]: app.js
+                    - generic [ref=e355]:
+                      - generic [ref=e356]: blob
+                      - generic [ref=e357]: 77b3c1
+                      - generic [ref=e358]: README.md
+                    - generic [ref=e359]:
+                      - generic [ref=e360]: commit
+                      - generic [ref=e361]: 0d5e9a
+                    - generic [ref=e362]:
+                      - generic [ref=e363]: tree
+                      - generic [ref=e364]: bb12fc
+                    - generic [ref=e365]:
+                      - generic [ref=e366]: blob
+                      - generic [ref=e367]: 3f9a04
+                      - generic [ref=e368]: style.css
+                - generic [ref=e369]:
+                  - generic [ref=e370]: git gc
+                  - img [ref=e371]
+                - generic [ref=e373]:
+                  - code [ref=e375]: packfile
+                  - paragraph [ref=e377]:
+                    - text: empty until
+                    - code [ref=e378]: git gc
+          - paragraph [ref=e379]:
+            - text: "So both mental models are true at once: the"
+            - strong [ref=e380]: logical model
+            - text: is snapshots (a commit always refers to a complete tree), while the
+            - strong [ref=e381]: physical storage
+            - text: uses delta compression to keep things tiny. The crucial difference from a diff-based system is that Git’s deltas are an internal storage choice, picked freely between any two similar objects and kept in short chains. Git never has to replay your entire history to reconstruct a file.
+          - generic [ref=e382]:
+            - heading "A tour of the .git directory" [level=2] [ref=e383]:
+              - text: A tour of the
+              - code [ref=e384]: .git
+              - text: directory
+            - link "Section titled “A tour of the .git directory”" [ref=e385] [cursor=pointer]:
+              - /url: "#a-tour-of-the-git-directory"
+              - img [ref=e387]
+              - generic [ref=e389]: Section titled “A tour of the .git directory”
+          - paragraph [ref=e390]:
+            - text: All of this lives inside the hidden
+            - code [ref=e391]: .git
+            - text: folder at the root of your repository. Right after
+            - code [ref=e392]: git init
+            - text: (and a first
+            - code [ref=e393]: git add
+            - text: "), it looks like this:"
+          - figure "Terminal window" [ref=e395]:
+            - generic [ref=e398]: Terminal window
+            - code [ref=e400]:
+              - generic [ref=e402]: .git/
+              - generic [ref=e404]: "├── HEAD # which branch you are on -> ref: refs/heads/main"
+              - generic [ref=e406]: "├── config # this repository's configuration"
+              - generic [ref=e408]: "├── description # only used by GitWeb, ignore it"
+              - generic [ref=e410]: "├── index # the staging area (a binary file)"
+              - generic [ref=e412]: "├── hooks/ # sample hook scripts (see Chapter 9)"
+              - generic [ref=e414]: "├── info/ # extra config, e.g. a global-style exclude file"
+              - generic [ref=e416]: "├── objects/ # every blob, tree, commit and tag lives here"
+              - generic [ref=e418]: "└── refs/ # branches (refs/heads) and tags (refs/tags)"
+            - button "Copy to clipboard" [ref=e420] [cursor=pointer]
+          - paragraph [ref=e422]:
+            - text: A few entries that students often expect to see are
+            - strong [ref=e423]: not
+            - text: "there yet:"
+            - code [ref=e424]: logs/
+            - text: ","
+            - code [ref=e425]: FETCH_HEAD
+            - text: ","
+            - code [ref=e426]: ORIG_HEAD
+            - text: ", and"
+            - code [ref=e427]: COMMIT_EDITMSG
+            - text: only appear once you actually move a reference, fetch, reset, or commit. A
+            - code [ref=e428]: packed-refs
+            - text: file shows up after Git packs your refs. In other words,
+            - code [ref=e429]: .git
+            - text: grows the machinery as you use it.
+          - generic [ref=e430]:
+            - heading "The index (your staging area, on disk)" [level=3] [ref=e431]
+            - link "Section titled “The index (your staging area, on disk)”" [ref=e432] [cursor=pointer]:
+              - /url: "#the-index-your-staging-area-on-disk"
+              - img [ref=e434]
+              - generic [ref=e436]: Section titled “The index (your staging area, on disk)”
+          - paragraph [ref=e437]:
+            - text: The
+            - strong [ref=e438]: staging area
+            - text: you met back in
+            - link "Chapter 3" [ref=e439] [cursor=pointer]:
+              - /url: /git-primer/basic-workflow/
+            - text: is not an abstract idea, it is the real binary file
+            - code [ref=e440]: .git/index
+            - text: . It holds the exact list of blobs that will go into your
+            - strong [ref=e441]: next
+            - text: "commit. You can read it in plain text with another plumbing command:"
+          - figure "Terminal window" [ref=e443]:
+            - generic [ref=e446]: Terminal window
+            - code [ref=e448]:
+              - generic [ref=e450]: git ls-files --stage
+              - generic [ref=e452]: "# 100644 670a245535fe6316eb2316c1103b1a88bb519334 0 greeting.txt"
+              - generic [ref=e454]: "# ^mode ^blob hash (matches git hash-object!) ^stage ^path"
+            - button "Copy to clipboard" [ref=e456] [cursor=pointer]
+          - paragraph [ref=e458]:
+            - text: Notice the blob hash is the same
+            - code [ref=e459]: 670a2455
+            - text: we computed earlier. Staging a file really means “hash its content into a blob and record that id in the index.” Committing then freezes the index into a tree.
+          - generic [ref=e460]:
+            - heading "Commits form a chain, like a blockchain" [level=2] [ref=e461]
+            - link "Section titled “Commits form a chain, like a blockchain”" [ref=e462] [cursor=pointer]:
+              - /url: "#commits-form-a-chain-like-a-blockchain"
+              - img [ref=e464]
+              - generic [ref=e466]: Section titled “Commits form a chain, like a blockchain”
+          - paragraph [ref=e467]: "Here is one of the most useful mental models for Git: a commit behaves a lot like a block in a blockchain."
+          - paragraph [ref=e468]:
+            - text: "Every commit’s hash is computed from its content: its tree (the snapshot), its author, its message, and, crucially,"
+            - strong [ref=e469]: the hash of its parent commit
+            - text: . Because the parent’s hash is baked into the child, the commits form a tamper-evident chain. Change anything in an old commit and its hash changes, which changes the “parent” recorded in the next commit, which changes that commit’s hash too, and so on, all the way to the tip.
+          - paragraph [ref=e470]: "Try it yourself. Edit a message in an early block, or hit “Tamper with commit #0”, and watch the change re-hash down the chain:"
+          - paragraph [ref=e471]: This is exactly why you cannot quietly rewrite shared history. The moment you change an old commit, every later commit gets a new hash, and anyone who already has the original chain will spot the mismatch.
+          - blockquote [ref=e472]:
+            - paragraph [ref=e473]:
+              - text: 📖 The demo is simplified to keep the focus on the chaining. A real commit object has the form
+              - code [ref=e474]: commit <size>\0tree <hash>\nparent <hash>\nauthor ...\ncommitter ...\n\n<message>
+              - text: ", and that whole thing is what gets hashed. The principle is identical: the parent’s hash is part of what gets hashed, so history is cryptographically chained."
+          - generic [ref=e475]:
+            - heading "Git references (HEAD, refs, tags)" [level=2] [ref=e476]
+            - link "Section titled “Git references (HEAD, refs, tags)”" [ref=e477] [cursor=pointer]:
+              - /url: "#git-references-head-refs-tags"
+              - img [ref=e479]
+              - generic [ref=e481]: Section titled “Git references (HEAD, refs, tags)”
+          - paragraph [ref=e482]:
+            - text: Objects are addressed by their 40-character hash, like
+            - code [ref=e483]: 516cdb49934cdeea7131fe5baf0f44c871cbb3de
+            - text: . Nobody wants to type that.
+            - strong [ref=e484]: References
+            - text: (or “refs”) are human-friendly names that point to those hashes, and Git uses them everywhere.
+          - generic [ref=e485]:
+            - heading "Branches" [level=3] [ref=e486]
+            - link "Section titled “Branches”" [ref=e487] [cursor=pointer]:
+              - /url: "#branches"
+              - img [ref=e489]
+              - generic [ref=e491]: Section titled “Branches”
+          - paragraph [ref=e492]:
+            - text: A
+            - strong [ref=e493]: branch is simply a lightweight, movable pointer to a commit
+            - text: . It lives as a tiny file under
+            - code [ref=e494]: .git/refs/heads/
+            - text: "whose entire contents is one hash:"
+          - figure "Terminal window" [ref=e496]:
+            - generic [ref=e499]: Terminal window
+            - code [ref=e501]:
+              - generic [ref=e503]: cat .git/refs/heads/main
+              - generic [ref=e505]: "# 516cdb49934cdeea7131fe5baf0f44c871cbb3de"
+            - button "Copy to clipboard" [ref=e507] [cursor=pointer]
+          - paragraph [ref=e509]: When you make a new commit, Git updates that file to point to the new commit. That is literally all a branch is, which is why creating and deleting branches in Git is so cheap.
+          - generic [ref=e510]:
+            - heading "HEAD" [level=3] [ref=e511]
+            - link "Section titled “HEAD”" [ref=e512] [cursor=pointer]:
+              - /url: "#head"
+              - img [ref=e514]
+              - generic [ref=e516]: Section titled “HEAD”
+          - paragraph [ref=e517]:
+            - code [ref=e518]: HEAD
+            - text: "answers the question “where am I right now?”. In most cases it doesn’t point directly to a commit, it points to the branch you currently have checked out:"
+          - figure "refs/heads/main" [ref=e520]:
+            - generic [ref=e522]: refs/heads/main
+            - code [ref=e524]:
+              - generic [ref=e526]: cat .git/HEAD
+            - button "Copy to clipboard" [ref=e528] [cursor=pointer]
+          - paragraph [ref=e530]:
+            - text: This indirection is what lets Git know which branch should move forward when you commit. As mentioned in
+            - link "Chapter 2" [ref=e531] [cursor=pointer]:
+              - /url: /git-primer/setup/
+            - text: ", if"
+            - code [ref=e532]: HEAD
+            - text: points straight at a commit instead of a branch, you are in a
+            - strong [ref=e533]: detached HEAD
+            - text: state.
+          - paragraph [ref=e534]: "Pointers are much easier to understand once you watch them move. Step through committing, switching branches, and detaching HEAD below. Pay attention to what moves: in many steps, only the pointers change, no files are copied:"
+          - generic [ref=e536]:
+            - generic [ref=e537]:
+              - generic [ref=e539]:
+                - generic [ref=e540]:
+                  - button "Previous step" [disabled] [ref=e541]: ◂ Prev
+                  - button "git commit ▸" [ref=e542] [cursor=pointer]
+                  - button "Restart" [disabled] [ref=e543]: ↺ Restart
+                - generic [ref=e544]:
+                  - slider "Timeline scrubber" [ref=e545] [cursor=pointer]: "0"
+                  - generic [ref=e546]: 1 / 7
+              - generic [ref=e547]:
+                - generic [ref=e548]: Step 1 of 7
+                - paragraph [ref=e549]: A fresh repo. The branch main points to commit C1, and HEAD points to main. HEAD answers 'where am I right now?'.
+            - img "HEAD and branch pointers moving through a commit history" [ref=e551]:
+              - generic [ref=e553]:
+                - generic: C1
+              - generic [ref=e556]:
+                - generic: main
+              - generic [ref=e560]:
+                - generic: HEAD
+          - generic [ref=e563]:
+            - heading "Tags" [level=3] [ref=e564]
+            - link "Section titled “Tags”" [ref=e565] [cursor=pointer]:
+              - /url: "#tags"
+              - img [ref=e567]
+              - generic [ref=e569]: Section titled “Tags”
+          - paragraph [ref=e570]:
+            - text: A tag is a reference that points to a specific commit and, unlike a branch, is
+            - strong [ref=e571]: not
+            - text: meant to move. Tags are how you mark meaningful points in history, most commonly releases.
+          - figure "Terminal window" [ref=e573]:
+            - generic [ref=e576]: Terminal window
+            - code [ref=e578]:
+              - generic [ref=e580]: "# Lightweight tag: just a named pointer to a commit"
+              - generic [ref=e582]: git tag v1.0.0
+              - generic [ref=e586]: "# Annotated tag: stores extra metadata (author, date, message) as its own object"
+              - generic [ref=e588]: git tag -a v1.0.0 -m "First stable release"
+            - button "Copy to clipboard" [ref=e590] [cursor=pointer]
+          - paragraph [ref=e592]:
+            - text: Annotated tags are recommended for releases because they record who created the tag and when. Tags are
+            - strong [ref=e593]: not
+            - text: "pushed by default, so share them explicitly:"
+          - figure "Terminal window" [ref=e595]:
+            - generic [ref=e598]: Terminal window
+            - code [ref=e600]:
+              - generic [ref=e602]: git push origin --tags
+            - button "Copy to clipboard" [ref=e604] [cursor=pointer]
+          - generic [ref=e606]:
+            - heading "Putting it together" [level=3] [ref=e607]
+            - link "Section titled “Putting it together”" [ref=e608] [cursor=pointer]:
+              - /url: "#putting-it-together"
+              - img [ref=e610]
+              - generic [ref=e612]: Section titled “Putting it together”
+          - paragraph [ref=e613]:
+            - text: All of these references live under
+            - code [ref=e614]: .git/refs/
+            - text: ":"
+          - list [ref=e615]:
+            - listitem [ref=e616]:
+              - code [ref=e617]: refs/heads/
+              - text: holds your local branches.
+            - listitem [ref=e618]:
+              - code [ref=e619]: refs/remotes/
+              - text: holds your view of the remote branches (like
+              - code [ref=e620]: origin/main
+              - text: ).
+            - listitem [ref=e621]:
+              - code [ref=e622]: refs/tags/
+              - text: holds your tags.
+          - paragraph [ref=e623]:
+            - text: So when you read a command like
+            - code [ref=e624]: git log main
+            - text: ", Git looks up"
+            - code [ref=e625]: refs/heads/main
+            - text: ", finds the commit it points to, follows the parent links, and walks back through the snapshots. Once you see refs as nothing more than named pointers to commits, a lot of Git’s “magic” stops feeling like magic."
+          - generic [ref=e626]:
+            - heading "Plumbing vs. porcelain" [level=2] [ref=e627]
+            - link "Section titled “Plumbing vs. porcelain”" [ref=e628] [cursor=pointer]:
+              - /url: "#plumbing-vs-porcelain"
+              - img [ref=e630]
+              - generic [ref=e632]: Section titled “Plumbing vs. porcelain”
+          - paragraph [ref=e633]: "You may have noticed two flavors of command in this chapter. Git splits its commands into two layers:"
+          - list [ref=e634]:
+            - listitem [ref=e635]:
+              - strong [ref=e636]: Porcelain
+              - text: "commands are the friendly, everyday ones built for humans:"
+              - code [ref=e637]: git add
+              - text: ","
+              - code [ref=e638]: git commit
+              - text: ","
+              - code [ref=e639]: git log
+              - text: ","
+              - code [ref=e640]: git switch
+              - text: . These are what you use 99% of the time.
+            - listitem [ref=e641]:
+              - strong [ref=e642]: Plumbing
+              - text: "commands are the low-level tools the porcelain is built on:"
+              - code [ref=e643]: git hash-object
+              - text: ","
+              - code [ref=e644]: git cat-file
+              - text: ","
+              - code [ref=e645]: git ls-files
+              - text: ","
+              - code [ref=e646]: git rev-parse
+              - text: ","
+              - code [ref=e647]: git update-ref
+              - text: . You rarely call them directly, but they are perfect for peeking under the hood (and for scripting).
+          - paragraph [ref=e648]: "Everything the porcelain does is ultimately these small plumbing operations on objects and refs. That is why a tour of the internals is so empowering: once you can read the objects and refs directly, no Git command is a black box anymore."
+          - generic [ref=e649]:
+            - heading "From SHA-1 to SHA-256" [level=2] [ref=e650]
+            - link "Section titled “From SHA-1 to SHA-256”" [ref=e651] [cursor=pointer]:
+              - /url: "#from-sha-1-to-sha-256"
+              - img [ref=e653]
+              - generic [ref=e655]: Section titled “From SHA-1 to SHA-256”
+          - paragraph [ref=e656]:
+            - text: You have seen 40-character hashes throughout this chapter. Those are
+            - strong [ref=e657]: SHA-1
+            - text: ", which is still Git’s default object format. Modern Git ships a hardened SHA-1 with built-in collision detection, so it rejects the known collision attacks rather than being fooled by them."
+          - paragraph [ref=e658]:
+            - text: Git is also gradually moving to
+            - strong [ref=e659]: SHA-256
+            - text: ". You can create a repository that uses it from day one:"
+          - figure "Terminal window" [ref=e661]:
+            - generic [ref=e664]: Terminal window
+            - code [ref=e666]:
+              - generic [ref=e668]: git init --object-format=sha256
+              - generic [ref=e670]: git rev-parse --show-object-format
+              - generic [ref=e672]: "# sha256"
+            - button "Copy to clipboard" [ref=e674] [cursor=pointer]
+          - paragraph [ref=e676]: "SHA-256 repositories use 64-character hashes. Interoperability between SHA-1 and SHA-256 repositories is still maturing, so for everyday work SHA-1 remains the norm, but it’s good to know which way the wind is blowing. Either way, nothing you learned here changes: objects are still content-addressed, commits still chain through their parents, and refs are still just names pointing at hashes."
+        - generic [ref=e677]:
+          - link "Edit page" [ref=e679] [cursor=pointer]:
+            - /url: https://github.com/pallandir/git-primer/edit/main/src/content/docs/internals.mdx
+            - img [ref=e680]
+            - text: Edit page
+          - generic [ref=e682]:
+            - link "Previous 6. Undoing Changes" [ref=e683] [cursor=pointer]:
+              - /url: /git-primer/undoing-changes/
+              - img [ref=e684]
+              - generic [ref=e686]:
+                - text: Previous
+                - text: 6. Undoing Changes
+            - link "Next 8. Advanced Git Commands" [ref=e687] [cursor=pointer]:
+              - /url: /git-primer/advanced-commands/
+              - img [ref=e688]
+              - generic [ref=e690]:
+                - text: Next
+                - text: 8. Advanced Git Commands
+  - generic [ref=e693]:
+    - button "Menu" [ref=e694]:
+      - img [ref=e696]
+      - generic: Menu
+    - button "Inspect" [ref=e700]:
+      - img [ref=e702]
+      - generic: Inspect
+    - button "Audit" [ref=e704]:
+      - img [ref=e706]
+      - generic: Audit
+    - button "Settings" [ref=e709]:
+      - img [ref=e711]
+      - generic: Settings
+  - img [ref=e715]

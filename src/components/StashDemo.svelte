@@ -1,11 +1,6 @@
 <script>
   import { onMount, untrack } from "svelte";
-  import {
-    SvelteFlow,
-    Background,
-    BackgroundVariant,
-    Position,
-  } from "@xyflow/svelte";
+  import { SvelteFlow, Position } from "@xyflow/svelte";
   import "@xyflow/svelte/dist/style.css";
   import GitDemo from "./GitDemo.svelte";
   import TimelineControls from "./TimelineControls.svelte";
@@ -43,9 +38,9 @@
     },
   ];
 
-  const ZONE_W = 240;
-  const ZONE_H = 250;
-  const ZONE_GAP = 170;
+  const ZONE_W = 400;
+  const ZONE_H = 290;
+  const ZONE_GAP = 412;
 
   let step = $state(0);
   let prevStep = 0;
@@ -159,13 +154,17 @@
     panOnScroll={false}
     panOnDrag={false}
     proOptions={{ hideAttribution: true }}
-  >
-    <Background variant={BackgroundVariant.Dots} gap={22} size={1} />
-  </SvelteFlow>
+  ></SvelteFlow>
 </GitDemo>
 
 <style>
   :global(.gd--fixed .svelte-flow) {
-    background: var(--sl-color-black);
+    background-color: var(--sl-color-black);
+    background-image: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--sl-color-white) 7%, transparent) 1px,
+      transparent 1.5px
+    );
+    background-size: 20px 20px;
   }
 </style>

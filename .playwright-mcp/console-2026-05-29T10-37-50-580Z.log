@@ -1,0 +1,7 @@
+[     116ms] [LOG] [astro-mermaid] No mermaid diagrams found on initial load @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     117ms] [LOG] [astro-mermaid] Initializing mermaid diagrams... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     117ms] [LOG] [astro-mermaid] Found 0 mermaid diagrams @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     117ms] [LOG] [astro-mermaid] Initializing mermaid diagrams... @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     117ms] [LOG] [astro-mermaid] Found 0 mermaid diagrams @ http://localhost:4321/@id/astro:scripts/page.js:2
+[     170ms] [WARNING] Use $state.raw for nodes to prevent performance issues. @ http://localhost:4321/node_modules/.vite/deps/@xyflow_svelte.js?v=ccdc6a10:4718
+[     170ms] [WARNING] Use $state.raw for edges to prevent performance issues. @ http://localhost:4321/node_modules/.vite/deps/@xyflow_svelte.js?v=ccdc6a10:4718

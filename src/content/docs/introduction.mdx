@@ -3,6 +3,8 @@ title: 1. Introduction to Git
 description: What Git is, why it matters, how it differs from GitHub and GitLab, and how to install and configure it.
 ---
 
+import GitVsPlatforms from '../../components/GitVsPlatforms.svelte';
+
 ## What is Git? Why use it?
 
 Git is a powerful, **distributed** version control system designed to track changes in files and collaborate with others on projects. **Distributed** is the key word: every clone is a full copy of the entire history, so you can commit, branch, and browse the past completely offline, with no central server to ask permission from. Whether it's source code, articles, or entire project files, Git ensures that you can easily manage and revert changes over time.
@@ -21,23 +23,7 @@ Using Git ensures you can maintain a clean and organized history of your project
 
 It's important to distinguish Git from platforms like GitHub and GitLab. **Git is the tool**; **GitHub and GitLab are hosting platforms built on top of it.** Git manages your project locally and enables distributed collaboration all on its own. GitHub and GitLab add a shared place to store repositories, plus pull requests, issues, and CI/CD around them.
 
-```mermaid
-flowchart LR
-    subgraph Local["Your machine"]
-        G["Git (the tool)"]
-    end
-    subgraph Cloud["Hosting platforms"]
-        GH["GitHub"]
-        GL["GitLab"]
-        BB["Bitbucket"]
-    end
-    G -- "push / pull" --> GH
-    G -- "push / pull" --> GL
-    G -- "push / pull" --> BB
-    GH -. "built on" .-> G
-    GL -. "built on" .-> G
-    BB -. "built on" .-> G
-```
+<GitVsPlatforms client:visible />
 
 These platforms provide centralized repositories to store and share your Git projects, collaborative tools for team communication and code reviews, and user-friendly interfaces to interact with Git. While GitHub or GitLab enhances your Git experience, they are not required to use Git, as Git can function independently, but these platforms need Git as their foundation.
 

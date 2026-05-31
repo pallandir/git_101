@@ -1,0 +1,183 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#_top"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Git logo A brief debunk of Git" [ref=e7] [cursor=pointer]:
+          - /url: /git-primer/
+          - img "Git logo" [ref=e8]
+          - generic [ref=e9]: A brief debunk of Git
+        - button "Search" [ref=e12] [cursor=pointer]:
+          - img [ref=e13]
+          - generic [ref=e15]: Search
+          - generic [ref=e16]:
+            - generic [ref=e17]: ⌘
+            - generic [ref=e18]: K
+        - generic [ref=e19]:
+          - link "GitHub" [ref=e21] [cursor=pointer]:
+            - /url: https://github.com/pallandir/git-primer
+            - generic [ref=e22]: GitHub
+            - img [ref=e23]
+          - generic [ref=e26]:
+            - generic [ref=e27]: Select theme
+            - img
+            - combobox "Select theme" [ref=e28] [cursor=pointer]:
+              - option "Dark" [selected]
+              - option "Light"
+              - option "Auto"
+            - img
+    - main [ref=e32]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - paragraph [ref=e37]: Interactive Git course
+            - heading "A brief debunk of Git" [level=1] [ref=e39]
+            - paragraph [ref=e40]: Master Git and use it like a pro in your projects. Clear explanations, visual diagrams, and animations you can play with.
+            - generic [ref=e41]:
+              - link "Start the course" [ref=e42] [cursor=pointer]:
+                - /url: /git-primer/introduction/
+                - text: Start the course
+                - img [ref=e43]
+              - link "View on GitHub" [ref=e45] [cursor=pointer]:
+                - /url: https://github.com/pallandir/git-primer
+                - text: View on GitHub
+                - img [ref=e46]
+            - list [ref=e49]:
+              - listitem [ref=e50]:
+                - strong [ref=e51]: "15"
+                - text: chapters
+              - listitem [ref=e52]:
+                - strong [ref=e53]: "11"
+                - text: playable demos
+              - listitem [ref=e54]: beginner → advanced
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - code [ref=e63]: $ git fetch
+              - generic [ref=e64]: branch flow
+            - img [ref=e67]:
+              - generic [ref=e68]:
+                - generic [ref=e75]: main
+                - generic [ref=e78]: HEAD
+                - generic [ref=e81]: origin/main
+            - status [ref=e82]:
+              - generic [ref=e83]: Your main is in sync with origin/main.
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - paragraph [ref=e89]: Why this book
+            - paragraph [ref=e90]: Git is powerful but overwhelming at first, so the tricky parts come as animations you can play with until the mental model actually sticks.
+          - list [ref=e91]:
+            - listitem [ref=e92]:
+              - link "01 Introduction to Git →" [ref=e93] [cursor=pointer]:
+                - /url: /git-primer/introduction/
+                - generic [ref=e94]: "01"
+                - generic [ref=e95]: Introduction to Git
+                - generic [ref=e96]: →
+            - listitem [ref=e97]:
+              - link "02 Setting Up a Repository →" [ref=e98] [cursor=pointer]:
+                - /url: /git-primer/setup/
+                - generic [ref=e99]: "02"
+                - generic [ref=e100]: Setting Up a Repository
+                - generic [ref=e101]: →
+            - listitem [ref=e102]:
+              - link "03 Basic Git Workflow →" [ref=e103] [cursor=pointer]:
+                - /url: /git-primer/basic-workflow/
+                - generic [ref=e104]: "03"
+                - generic [ref=e105]: Basic Git Workflow
+                - generic [ref=e106]: →
+            - listitem [ref=e107]:
+              - link "04 Working with Branches →" [ref=e108] [cursor=pointer]:
+                - /url: /git-primer/branches/
+                - generic [ref=e109]: "04"
+                - generic [ref=e110]: Working with Branches
+                - generic [ref=e111]: →
+            - listitem [ref=e112]:
+              - link "05 Remote Repositories →" [ref=e113] [cursor=pointer]:
+                - /url: /git-primer/remotes/
+                - generic [ref=e114]: "05"
+                - generic [ref=e115]: Remote Repositories
+                - generic [ref=e116]: →
+            - listitem [ref=e117]:
+              - link "06 Undoing Changes →" [ref=e118] [cursor=pointer]:
+                - /url: /git-primer/undoing-changes/
+                - generic [ref=e119]: "06"
+                - generic [ref=e120]: Undoing Changes
+                - generic [ref=e121]: →
+            - listitem [ref=e122]:
+              - link "07 Understanding Git Internals →" [ref=e123] [cursor=pointer]:
+                - /url: /git-primer/internals/
+                - generic [ref=e124]: "07"
+                - generic [ref=e125]: Understanding Git Internals
+                - generic [ref=e126]: →
+            - listitem [ref=e127]:
+              - link "08 Advanced Git Commands →" [ref=e128] [cursor=pointer]:
+                - /url: /git-primer/advanced-commands/
+                - generic [ref=e129]: "08"
+                - generic [ref=e130]: Advanced Git Commands
+                - generic [ref=e131]: →
+            - listitem [ref=e132]:
+              - link "09 Git Hooks & Automation →" [ref=e133] [cursor=pointer]:
+                - /url: /git-primer/hooks-automation/
+                - generic [ref=e134]: "09"
+                - generic [ref=e135]: Git Hooks & Automation
+                - generic [ref=e136]: →
+            - listitem [ref=e137]:
+              - link "10 Git Best Practices →" [ref=e138] [cursor=pointer]:
+                - /url: /git-primer/best-practices/
+                - generic [ref=e139]: "10"
+                - generic [ref=e140]: Git Best Practices
+                - generic [ref=e141]: →
+            - listitem [ref=e142]:
+              - link "11 Troubleshooting →" [ref=e143] [cursor=pointer]:
+                - /url: /git-primer/troubleshooting/
+                - generic [ref=e144]: "11"
+                - generic [ref=e145]: Troubleshooting
+                - generic [ref=e146]: →
+            - listitem [ref=e147]:
+              - link "12 Submodules & Large Repos →" [ref=e148] [cursor=pointer]:
+                - /url: /git-primer/submodules-large-repos/
+                - generic [ref=e149]: "12"
+                - generic [ref=e150]: Submodules & Large Repos
+                - generic [ref=e151]: →
+            - listitem [ref=e152]:
+              - link "13 Git with Other Tools →" [ref=e153] [cursor=pointer]:
+                - /url: /git-primer/other-tools/
+                - generic [ref=e154]: "13"
+                - generic [ref=e155]: Git with Other Tools
+                - generic [ref=e156]: →
+            - listitem [ref=e157]:
+              - link "14 Real-World Scenarios →" [ref=e158] [cursor=pointer]:
+                - /url: /git-primer/real-world-scenarios/
+                - generic [ref=e159]: "14"
+                - generic [ref=e160]: Real-World Scenarios
+                - generic [ref=e161]: →
+            - listitem [ref=e162]:
+              - link "15 Learning Resources →" [ref=e163] [cursor=pointer]:
+                - /url: /git-primer/resources/
+                - generic [ref=e164]: "15"
+                - generic [ref=e165]: Learning Resources
+                - generic [ref=e166]: →
+        - generic [ref=e167]:
+          - link "Edit page" [ref=e169] [cursor=pointer]:
+            - /url: https://github.com/pallandir/git-primer/edit/main/src/content/docs/index.mdx
+            - img [ref=e170]
+            - text: Edit page
+          - link "Next 1. Introduction to Git" [ref=e173] [cursor=pointer]:
+            - /url: /git-primer/introduction/
+            - img [ref=e174]
+            - generic [ref=e176]:
+              - text: Next
+              - text: 1. Introduction to Git
+  - generic [ref=e179]:
+    - button "Menu" [ref=e180]:
+      - img [ref=e182]
+      - generic: Menu
+    - button "Inspect" [ref=e186]:
+      - img [ref=e188]
+      - generic: Inspect
+    - button "Audit" [ref=e190]:
+      - img [ref=e192]
+      - generic: Audit
+    - button "Settings" [ref=e195]:
+      - img [ref=e197]
+      - generic: Settings

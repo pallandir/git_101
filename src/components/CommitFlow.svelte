@@ -1,11 +1,6 @@
 <script>
   import { onMount, untrack } from "svelte";
-  import {
-    SvelteFlow,
-    Background,
-    BackgroundVariant,
-    Position,
-  } from "@xyflow/svelte";
+  import { SvelteFlow, Position } from "@xyflow/svelte";
   import "@xyflow/svelte/dist/style.css";
   import GitDemo from "./GitDemo.svelte";
   import TimelineControls from "./TimelineControls.svelte";
@@ -22,6 +17,13 @@
     "Remote Repository",
   ];
   const cmds = ["git add", "git commit", "git push"];
+
+  const accents = [
+    "var(--git-orange)",
+    "var(--gp-feature)",
+    "var(--gp-green)",
+    "var(--gp-alt)",
+  ];
 
   const captions = [
     "You edited app.js. It sits in your working directory, untracked by the next commit.",
@@ -74,7 +76,7 @@
     targetPosition: Position.Left,
     draggable: false,
     selectable: false,
-    data: { index: i, label, vis },
+    data: { index: i, label, vis, accent: accents[i] },
   }));
 
   const initialEdges = cmds.map((cmd, i) => ({
@@ -149,9 +151,7 @@
       panOnScroll={false}
       panOnDrag={false}
       proOptions={{ hideAttribution: true }}
-    >
-      <Background variant={BackgroundVariant.Dots} gap={22} size={1} />
-    </SvelteFlow>
+    ></SvelteFlow>
   </div>
 </GitDemo>
 
@@ -161,7 +161,13 @@
     inset: 0;
   }
   .cf__canvas :global(.svelte-flow) {
-    background: var(--sl-color-black);
+    background-color: var(--sl-color-black);
+    background-image: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--sl-color-white) 7%, transparent) 1px,
+      transparent 1.5px
+    );
+    background-size: 20px 20px;
   }
   .cf__canvas :global(.svelte-flow__node) {
     cursor: default;

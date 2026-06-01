@@ -1,0 +1,604 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#_top"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Git logo A brief debunk of Git" [ref=e7] [cursor=pointer]:
+          - /url: /git-primer/
+          - img "Git logo" [ref=e8]
+          - generic [ref=e9]: A brief debunk of Git
+        - button "Search" [ref=e12] [cursor=pointer]:
+          - img [ref=e13]
+          - generic [ref=e15]: Search
+          - generic [ref=e16]:
+            - generic [ref=e17]: ⌘
+            - generic [ref=e18]: K
+        - generic [ref=e19]:
+          - link "GitHub" [ref=e21] [cursor=pointer]:
+            - /url: https://github.com/pallandir/git-primer
+            - generic [ref=e22]: GitHub
+            - img [ref=e23]
+          - generic [ref=e26]:
+            - generic [ref=e27]: Select theme
+            - img
+            - combobox "Select theme" [ref=e28] [cursor=pointer]:
+              - option "Dark" [selected]
+              - option "Light"
+              - option "Auto"
+            - img
+    - navigation "Main":
+      - list [ref=e32]:
+        - listitem [ref=e33]:
+          - group [ref=e34]:
+            - generic "Start here" [ref=e35] [cursor=pointer]:
+              - generic [ref=e36]: Start here
+              - img [ref=e37]
+            - list [ref=e39]:
+              - listitem [ref=e40]:
+                - link "Welcome" [ref=e41] [cursor=pointer]:
+                  - /url: /git-primer/
+              - listitem [ref=e42]:
+                - link "1. Introduction to Git" [ref=e43] [cursor=pointer]:
+                  - /url: /git-primer/introduction/
+              - listitem [ref=e44]:
+                - link "2. Setting Up a Repository" [ref=e45] [cursor=pointer]:
+                  - /url: /git-primer/setup/
+        - listitem [ref=e46]:
+          - group [ref=e47]:
+            - generic "Everyday Git" [ref=e48] [cursor=pointer]:
+              - generic [ref=e49]: Everyday Git
+              - img [ref=e50]
+            - list [ref=e52]:
+              - listitem [ref=e53]:
+                - link "3. Basic Git Workflow" [ref=e54] [cursor=pointer]:
+                  - /url: /git-primer/basic-workflow/
+              - listitem [ref=e55]:
+                - link "4. Working with Branches" [ref=e56] [cursor=pointer]:
+                  - /url: /git-primer/branches/
+              - listitem [ref=e57]:
+                - link "5. Remote Repositories" [ref=e58] [cursor=pointer]:
+                  - /url: /git-primer/remotes/
+              - listitem [ref=e59]:
+                - link "6. Undoing Changes" [ref=e60] [cursor=pointer]:
+                  - /url: /git-primer/undoing-changes/
+        - listitem [ref=e61]:
+          - group [ref=e62]:
+            - generic "Under the Hood" [ref=e63] [cursor=pointer]:
+              - generic [ref=e64]: Under the Hood
+              - img [ref=e65]
+            - list [ref=e67]:
+              - listitem [ref=e68]:
+                - link "7. Understanding Git Internals" [ref=e69] [cursor=pointer]:
+                  - /url: /git-primer/internals/
+        - listitem [ref=e70]:
+          - group [ref=e71]:
+            - generic "Advanced Git" [ref=e72] [cursor=pointer]:
+              - generic [ref=e73]: Advanced Git
+              - img [ref=e74]
+            - list [ref=e76]:
+              - listitem [ref=e77]:
+                - link "8. Advanced Git Commands" [ref=e78] [cursor=pointer]:
+                  - /url: /git-primer/advanced-commands/
+              - listitem [ref=e79]:
+                - link "9. Git Hooks & Automation" [ref=e80] [cursor=pointer]:
+                  - /url: /git-primer/hooks-automation/
+              - listitem [ref=e81]:
+                - link "12. Submodules & Large Repos" [ref=e82] [cursor=pointer]:
+                  - /url: /git-primer/submodules-large-repos/
+        - listitem [ref=e83]:
+          - group [ref=e84]:
+            - generic "Working Well" [ref=e85] [cursor=pointer]:
+              - generic [ref=e86]: Working Well
+              - img [ref=e87]
+            - list [ref=e89]:
+              - listitem [ref=e90]:
+                - link "10. Git Best Practices" [ref=e91] [cursor=pointer]:
+                  - /url: /git-primer/best-practices/
+              - listitem [ref=e92]:
+                - link "11. Troubleshooting" [ref=e93] [cursor=pointer]:
+                  - /url: /git-primer/troubleshooting/
+              - listitem [ref=e94]:
+                - link "13. Git with Other Tools" [ref=e95] [cursor=pointer]:
+                  - /url: /git-primer/other-tools/
+              - listitem [ref=e96]:
+                - link "14. Real-World Scenarios" [ref=e97] [cursor=pointer]:
+                  - /url: /git-primer/real-world-scenarios/
+        - listitem [ref=e98]:
+          - group [ref=e99]:
+            - generic "Keep Learning" [ref=e100] [cursor=pointer]:
+              - generic [ref=e101]: Keep Learning
+              - img [ref=e102]
+            - list [ref=e104]:
+              - listitem [ref=e105]:
+                - link "15. Learning Resources" [ref=e106] [cursor=pointer]:
+                  - /url: /git-primer/resources/
+    - main [ref=e110]:
+      - heading "5. Remote Repositories" [level=1] [ref=e113]
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - heading "The push / fetch / pull cycle at a glance" [level=2] [ref=e118]
+            - link "Section titled “The push / fetch / pull cycle at a glance”" [ref=e119] [cursor=pointer]:
+              - /url: "#the-push--fetch--pull-cycle-at-a-glance"
+              - img [ref=e121]
+              - generic [ref=e123]: Section titled “The push / fetch / pull cycle at a glance”
+          - paragraph [ref=e124]:
+            - text: "Working with a remote is really just moving commits between two repositories: your"
+            - strong [ref=e125]: local
+            - text: one and the
+            - strong [ref=e126]: remote
+            - text: (usually called
+            - code [ref=e127]: origin
+            - text: ). Before we dig into each command, play through the full cycle below. Watch closely what happens to
+            - code [ref=e128]: main
+            - text: versus
+            - code [ref=e129]: origin/main
+            - text: ", especially during"
+            - code [ref=e130]: fetch
+            - text: .
+          - generic [ref=e132]:
+            - generic [ref=e133]:
+              - generic [ref=e135]:
+                - generic [ref=e136]:
+                  - button "Previous step" [disabled] [ref=e137]: ◂ Prev
+                  - button "git commit ▸" [ref=e138] [cursor=pointer]
+                  - button "Restart" [disabled] [ref=e139]: ↺ Restart
+                - generic [ref=e140]:
+                  - slider "Timeline scrubber" [ref=e141] [cursor=pointer]: "0"
+                  - generic [ref=e142]: 1 / 6
+              - generic [ref=e143]:
+                - generic [ref=e144]: Step 1 of 6
+                - paragraph [ref=e145]: "You and the remote agree: both are at C2. main and origin/main point to the same commit."
+            - generic [ref=e147]:
+              - generic [ref=e148]:
+                - generic [ref=e149]:
+                  - generic [ref=e150]: 💻
+                  - text: Local repository
+                - img "Local repository commit graph" [ref=e152]:
+                  - application [ref=e153]:
+                    - generic [ref=e155]:
+                      - generic:
+                        - generic:
+                          - img
+              - generic [ref=e157]:
+                - generic [ref=e158]:
+                  - generic [ref=e159]: ☁️
+                  - text: Remote (origin)
+                - img "Remote repository commit graph" [ref=e161]:
+                  - application [ref=e162]:
+                    - generic [ref=e164]:
+                      - generic:
+                        - generic:
+                          - img
+          - generic [ref=e166]:
+            - heading "Connecting to a remote (git remote add)" [level=2] [ref=e167]
+            - link "Section titled “Connecting to a remote (git remote add)”" [ref=e168] [cursor=pointer]:
+              - /url: "#connecting-to-a-remote-git-remote-add"
+              - img [ref=e170]
+              - generic [ref=e172]: Section titled “Connecting to a remote (git remote add)”
+          - paragraph [ref=e173]: To work with a remote repository, Git needs to know where your code is hosted. You can configure one or more remote URLs in your repository. Each remote is assigned an alias to reference it easily instead of using the full URL.
+          - application "Pushing, fetching and pulling between your local repository and the remote" [ref=e177]:
+            - generic [ref=e179]:
+              - generic:
+                - generic:
+                  - img
+                - generic:
+                  - group [ref=e180]:
+                    - generic [ref=e181]:
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - generic [ref=e184]: Local repository
+                      - generic [ref=e185]: your machine
+                  - group [ref=e186]:
+                    - generic [ref=e187]:
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - button "Handle"
+                      - generic [ref=e190]: Remote (origin)
+                      - generic [ref=e191]: GitHub / GitLab / …
+          - generic [ref=e193]:
+            - heading "Adding a remote" [level=3] [ref=e194]
+            - link "Section titled “Adding a remote”" [ref=e195] [cursor=pointer]:
+              - /url: "#adding-a-remote"
+              - img [ref=e197]
+              - generic [ref=e199]: Section titled “Adding a remote”
+          - paragraph [ref=e200]: "To add a remote to a repository:"
+          - figure "Terminal window" [ref=e202]:
+            - generic [ref=e205]: Terminal window
+            - code [ref=e207]:
+              - generic [ref=e209]: git remote add <remote-name> <remote-url>
+            - button "Copy to clipboard" [ref=e211] [cursor=pointer]
+          - list [ref=e213]:
+            - listitem [ref=e214]:
+              - emphasis [ref=e215]: remote-name
+              - text: "is the alias for the remote (default:"
+              - code [ref=e216]: origin
+              - text: ).
+            - listitem [ref=e217]:
+              - emphasis [ref=e218]: remote-url
+              - text: is the actual URL of the repository (e.g., GitHub, GitLab).
+          - paragraph [ref=e219]: "Example:"
+          - figure "Terminal window" [ref=e221]:
+            - generic [ref=e224]: Terminal window
+            - code [ref=e226]:
+              - generic [ref=e228]: git remote add origin https://github.com/user/repository.git
+            - button "Copy to clipboard" [ref=e230] [cursor=pointer]
+          - generic [ref=e232]:
+            - heading "Updating a remote URL" [level=3] [ref=e233]
+            - link "Section titled “Updating a remote URL”" [ref=e234] [cursor=pointer]:
+              - /url: "#updating-a-remote-url"
+              - img [ref=e236]
+              - generic [ref=e238]: Section titled “Updating a remote URL”
+          - paragraph [ref=e239]: "If the remote repository’s URL changes (e.g., after migrating to another platform), update it using:"
+          - figure "Terminal window" [ref=e241]:
+            - generic [ref=e244]: Terminal window
+            - code [ref=e246]:
+              - generic [ref=e248]: git remote set-url <remote-name> <remote-url>
+            - button "Copy to clipboard" [ref=e250] [cursor=pointer]
+          - paragraph [ref=e252]: "Example:"
+          - figure "Terminal window" [ref=e254]:
+            - generic [ref=e257]: Terminal window
+            - code [ref=e259]:
+              - generic [ref=e261]: git remote set-url origin https://gitlab.com/user/repository.git
+            - button "Copy to clipboard" [ref=e263] [cursor=pointer]
+          - generic [ref=e265]:
+            - heading "Renaming a remote" [level=3] [ref=e266]
+            - link "Section titled “Renaming a remote”" [ref=e267] [cursor=pointer]:
+              - /url: "#renaming-a-remote"
+              - img [ref=e269]
+              - generic [ref=e271]: Section titled “Renaming a remote”
+          - paragraph [ref=e272]: "If you need to rename a remote you can run:"
+          - figure "Terminal window" [ref=e274]:
+            - generic [ref=e277]: Terminal window
+            - code [ref=e279]:
+              - generic [ref=e281]: git remote rename <old-name> <new-name>
+            - button "Copy to clipboard" [ref=e283] [cursor=pointer]
+          - paragraph [ref=e285]: "Example:"
+          - figure "Terminal window" [ref=e287]:
+            - generic [ref=e290]: Terminal window
+            - code [ref=e292]:
+              - generic [ref=e294]: git remote rename origin upstream
+            - button "Copy to clipboard" [ref=e296] [cursor=pointer]
+          - generic [ref=e298]:
+            - heading "Removing a remote" [level=3] [ref=e299]
+            - link "Section titled “Removing a remote”" [ref=e300] [cursor=pointer]:
+              - /url: "#removing-a-remote"
+              - img [ref=e302]
+              - generic [ref=e304]: Section titled “Removing a remote”
+          - paragraph [ref=e305]: "To remove a remote from your repository:"
+          - figure "Terminal window" [ref=e307]:
+            - generic [ref=e310]: Terminal window
+            - code [ref=e312]:
+              - generic [ref=e314]: git remote remove <remote-name>
+            - button "Copy to clipboard" [ref=e316] [cursor=pointer]
+          - paragraph [ref=e318]: "Example:"
+          - figure "Terminal window" [ref=e320]:
+            - generic [ref=e323]: Terminal window
+            - code [ref=e325]:
+              - generic [ref=e327]: git remote remove origin
+            - button "Copy to clipboard" [ref=e329] [cursor=pointer]
+          - generic [ref=e331]:
+            - heading "Listing all remotes" [level=3] [ref=e332]
+            - link "Section titled “Listing all remotes”" [ref=e333] [cursor=pointer]:
+              - /url: "#listing-all-remotes"
+              - img [ref=e335]
+              - generic [ref=e337]: Section titled “Listing all remotes”
+          - paragraph [ref=e338]: "To view all configured remotes:"
+          - figure "Terminal window" [ref=e340]:
+            - generic [ref=e343]: Terminal window
+            - code [ref=e345]:
+              - generic [ref=e347]: git remote -v
+            - button "Copy to clipboard" [ref=e349] [cursor=pointer]
+          - paragraph [ref=e351]: This will display the remote names and their corresponding URLs.
+          - generic [ref=e352]:
+            - heading "Pushing changes (git push)" [level=2] [ref=e353]
+            - link "Section titled “Pushing changes (git push)”" [ref=e354] [cursor=pointer]:
+              - /url: "#pushing-changes-git-push"
+              - img [ref=e356]
+              - generic [ref=e358]: Section titled “Pushing changes (git push)”
+          - generic [ref=e359]:
+            - heading "Basic usage" [level=3] [ref=e360]
+            - link "Section titled “Basic usage”" [ref=e361] [cursor=pointer]:
+              - /url: "#basic-usage"
+              - img [ref=e363]
+              - generic [ref=e365]: Section titled “Basic usage”
+          - paragraph [ref=e366]:
+            - text: If you remember from
+            - link "Chapter 3" [ref=e367] [cursor=pointer]:
+              - /url: /git-primer/basic-workflow/
+            - text: ", until you push your code to the"
+            - strong [ref=e368]: remote repository
+            - text: ", it remains in your"
+            - strong [ref=e369]: local repository
+            - text: "and is only visible to you. To make your changes available to others, you need to use the push command. To push your current branch to the remote repository, run:"
+          - figure "Terminal window" [ref=e371]:
+            - generic [ref=e374]: Terminal window
+            - code [ref=e376]:
+              - generic [ref=e378]: git push
+            - button "Copy to clipboard" [ref=e380] [cursor=pointer]
+          - paragraph [ref=e382]: "By default, this will push your branch to its configured upstream branch (if one exists). If your branch has no upstream counterpart, Git will return an error:"
+          - figure "Terminal window" [ref=e384]:
+            - generic [ref=e387]: Terminal window
+            - code [ref=e389]:
+              - generic [ref=e391]: "fatal: The current branch <branch-name> has no upstream branch."
+            - button "Copy to clipboard" [ref=e393] [cursor=pointer]
+          - paragraph [ref=e395]: "To explicitly specify the remote branch, use:"
+          - figure "Terminal window" [ref=e397]:
+            - generic [ref=e400]: Terminal window
+            - code [ref=e402]:
+              - generic [ref=e404]: git push origin <branch-name>
+            - button "Copy to clipboard" [ref=e406] [cursor=pointer]
+          - paragraph [ref=e408]: This ensures that your local branch is pushed to the remote repository under the same name.
+          - generic [ref=e409]:
+            - heading "When to use git push and git push origin ‘branch’" [level=3] [ref=e410]
+            - link "Section titled “When to use git push and git push origin ‘branch’”" [ref=e411] [cursor=pointer]:
+              - /url: "#when-to-use-git-push-and-git-push-origin-branch"
+              - img [ref=e413]
+              - generic [ref=e415]: Section titled “When to use git push and git push origin ‘branch’”
+          - paragraph [ref=e416]:
+            - text: While
+            - code [ref=e417]: git push
+            - text: assumes the current branch and default remote (
+            - code [ref=e418]: origin
+            - text: "), there are cases where specifying the remote explicitly is necessary:"
+          - list [ref=e419]:
+            - listitem [ref=e420]:
+              - strong [ref=e421]: "Multiple remotes:"
+              - text: if your repository has more than one remote, you must specify the correct one (e.g.,
+              - code [ref=e422]: git push upstream main
+              - text: ).
+            - listitem [ref=e423]:
+              - strong [ref=e424]: "Pushing to a different branch name:"
+              - text: if you need to push a local branch under a different name on the remote.
+            - listitem [ref=e425]:
+              - strong [ref=e426]: "Using additional flags:"
+              - text: certain options like
+              - code [ref=e427]: "--delete"
+              - text: "require explicitly specifying the remote:"
+          - figure "Terminal window" [ref=e429]:
+            - generic [ref=e432]: Terminal window
+            - code [ref=e434]:
+              - generic [ref=e436]: git push origin --delete feature-branch
+            - button "Copy to clipboard" [ref=e438] [cursor=pointer]
+          - paragraph [ref=e440]: "Here is a recap:"
+          - table [ref=e441]:
+            - rowgroup [ref=e442]:
+              - row "Command Behavior" [ref=e443]:
+                - columnheader "Command" [ref=e444]
+                - columnheader "Behavior" [ref=e445]
+            - rowgroup [ref=e446]:
+              - row "git push Pushes the current branch to its upstream branch (if set). If no upstream exists, it will return an error." [ref=e447]:
+                - cell "git push" [ref=e448]:
+                  - code [ref=e449]: git push
+                - cell "Pushes the current branch to its upstream branch (if set). If no upstream exists, it will return an error." [ref=e450]
+              - row "git push origin Pushes the current branch to the branch of the same name in origin, creating it on the remote if it doesn’t exist yet (the first push won’t set up tracking unless you add -u)." [ref=e451]:
+                - cell "git push origin" [ref=e452]:
+                  - code [ref=e453]: git push origin
+                - cell "Pushes the current branch to the branch of the same name in origin, creating it on the remote if it doesn’t exist yet (the first push won’t set up tracking unless you add -u)." [ref=e454]:
+                  - text: Pushes the current branch to the branch of the
+                  - strong [ref=e455]: same name
+                  - text: in
+                  - code [ref=e456]: origin
+                  - text: ", creating it on the remote if it doesn’t exist yet (the first push won’t set up tracking unless you add"
+                  - code [ref=e457]: "-u"
+                  - text: ).
+              - row "git push origin <branch> Pushes the specified branch to origin, regardless of the current checked-out branch." [ref=e458]:
+                - cell "git push origin <branch>" [ref=e459]:
+                  - code [ref=e460]: git push origin <branch>
+                - cell "Pushes the specified branch to origin, regardless of the current checked-out branch." [ref=e461]:
+                  - text: Pushes the specified branch to
+                  - code [ref=e462]: origin
+                  - text: ", regardless of the current checked-out branch."
+              - row "git push -u origin <branch> Pushes the branch and sets it as the upstream branch (so future git push commands will work without specifying it)." [ref=e463]:
+                - cell "git push -u origin <branch>" [ref=e464]:
+                  - code [ref=e465]: git push -u origin <branch>
+                - cell "Pushes the branch and sets it as the upstream branch (so future git push commands will work without specifying it)." [ref=e466]:
+                  - text: Pushes the branch and
+                  - strong [ref=e467]: sets it as the upstream branch
+                  - text: (so future
+                  - code [ref=e468]: git push
+                  - text: commands will work without specifying it).
+          - generic [ref=e469]:
+            - heading "Git push flags" [level=3] [ref=e470]
+            - link "Section titled “Git push flags”" [ref=e471] [cursor=pointer]:
+              - /url: "#git-push-flags"
+              - img [ref=e473]
+              - generic [ref=e475]: Section titled “Git push flags”
+          - paragraph [ref=e476]:
+            - text: When pushing your code, you may need to perform additional actions beyond simply submitting changes. Git provides various flags to customize the
+            - code [ref=e477]: git push
+            - text: "command. Below is a summary of the most commonly used ones:"
+          - table [ref=e478]:
+            - rowgroup [ref=e479]:
+              - row "Flag Description" [ref=e480]:
+                - columnheader "Flag" [ref=e481]
+                - columnheader "Description" [ref=e482]
+            - rowgroup [ref=e483]:
+              - row "-u / --set-upstream Sets the upstream branch for the current branch (e.g., git push -u origin main)." [ref=e484]:
+                - cell "-u / --set-upstream" [ref=e485]:
+                  - code [ref=e486]: "-u"
+                  - text: /
+                  - code [ref=e487]: "--set-upstream"
+                - cell "Sets the upstream branch for the current branch (e.g., git push -u origin main)." [ref=e488]:
+                  - text: Sets the upstream branch for the current branch (e.g.,
+                  - code [ref=e489]: git push -u origin main
+                  - text: ).
+              - row "--force / -f Forces the push, rewriting history if necessary (use with caution!)." [ref=e490]:
+                - cell "--force / -f" [ref=e491]:
+                  - code [ref=e492]: "--force"
+                  - text: /
+                  - code [ref=e493]: "-f"
+                - cell "Forces the push, rewriting history if necessary (use with caution!)." [ref=e494]:
+                  - text: Forces the push, rewriting history if necessary (
+                  - strong [ref=e495]: use with caution!
+                  - text: ).
+              - row "--force-with-lease Safer alternative to --force, ensuring no one else has pushed changes." [ref=e496]:
+                - cell "--force-with-lease" [ref=e497]:
+                  - code [ref=e498]: "--force-with-lease"
+                - cell "Safer alternative to --force, ensuring no one else has pushed changes." [ref=e499]:
+                  - text: Safer alternative to
+                  - code [ref=e500]: "--force"
+                  - text: ", ensuring no one else has pushed changes."
+              - row "--delete Deletes a branch from the remote (e.g., git push origin --delete feature)." [ref=e501]:
+                - cell "--delete" [ref=e502]:
+                  - code [ref=e503]: "--delete"
+                - cell "Deletes a branch from the remote (e.g., git push origin --delete feature)." [ref=e504]:
+                  - text: Deletes a branch from the remote (e.g.,
+                  - code [ref=e505]: git push origin --delete feature
+                  - text: ).
+              - row "--all Pushes all local branches to the remote." [ref=e506]:
+                - cell "--all" [ref=e507]:
+                  - code [ref=e508]: "--all"
+                - cell "Pushes all local branches to the remote." [ref=e509]
+              - row "--tags Pushes all local tags to the remote repository." [ref=e510]:
+                - cell "--tags" [ref=e511]:
+                  - code [ref=e512]: "--tags"
+                - cell "Pushes all local tags to the remote repository." [ref=e513]
+          - generic [ref=e514]:
+            - heading "Fetching changes (git fetch)" [level=2] [ref=e515]
+            - link "Section titled “Fetching changes (git fetch)”" [ref=e516] [cursor=pointer]:
+              - /url: "#fetching-changes-git-fetch"
+              - img [ref=e518]
+              - generic [ref=e520]: Section titled “Fetching changes (git fetch)”
+          - paragraph [ref=e521]: Synchronizing your local repository with the remote one is crucial in Git. It ensures that your changes are submitted to others, while also allowing you to pull in changes from other contributors to stay up-to-date with the latest version of your project. Now that you know how to push your changes, let’s cover how to fetch the changes made by others.
+          - paragraph [ref=e522]:
+            - text: Getting your branch up to date with the remote is really
+            - strong [ref=e523]: two separate steps
+            - text: ", and the important thing to understand is that"
+            - code [ref=e524]: git fetch
+            - text: "only does the first one:"
+          - list [ref=e525]:
+            - listitem [ref=e526]:
+              - strong [ref=e527]: "Fetch:"
+              - text: download the latest commits from the remote into your local repository, updating your remote-tracking branches (like
+              - code [ref=e528]: origin/main
+              - text: ). Your own branch and your files are left untouched.
+            - listitem [ref=e529]:
+              - strong [ref=e530]: "Merge:"
+              - text: when you’re ready, merge those fetched commits into your active branch.
+          - paragraph [ref=e531]:
+            - text: Keeping them separate is exactly what makes
+            - code [ref=e532]: fetch
+            - text: "safe: you can download and inspect what changed before you let any of it touch your work. The most basic command to download updates is:"
+          - figure "Terminal window" [ref=e534]:
+            - generic [ref=e537]: Terminal window
+            - code [ref=e539]:
+              - generic [ref=e541]: git fetch origin <branch>
+            - button "Copy to clipboard" [ref=e543] [cursor=pointer]
+          - paragraph [ref=e545]: This command downloads the latest changes from the remote repository into your local machine without merging them. This allows you to inspect the updates before integrating them into your own work.
+          - paragraph [ref=e546]: "Once you’re ready to merge the fetched content into your active branch, run:"
+          - figure "Terminal window" [ref=e548]:
+            - generic [ref=e551]: Terminal window
+            - code [ref=e553]:
+              - generic [ref=e555]: git merge origin/<branch-name>
+            - button "Copy to clipboard" [ref=e557] [cursor=pointer]
+          - paragraph [ref=e559]: This will bring in the updates from the remote branch and apply them to your current working branch. It’s always a good idea to make sure your working directory is clean (i.e., no uncommitted changes) before performing a merge to avoid conflicts.
+          - generic [ref=e560]:
+            - heading "Pulling updates (git pull)" [level=2] [ref=e561]
+            - link "Section titled “Pulling updates (git pull)”" [ref=e562] [cursor=pointer]:
+              - /url: "#pulling-updates-git-pull"
+              - img [ref=e564]
+              - generic [ref=e566]: Section titled “Pulling updates (git pull)”
+          - paragraph [ref=e567]:
+            - text: Once you’re comfortable with using
+            - code [ref=e568]: git fetch
+            - text: and
+            - code [ref=e569]: git merge origin/<branch>
+            - text: ", you might want a quicker way to perform both actions in one go, especially if you don’t need to inspect the code before merging it. The command you’re looking for is:"
+          - figure "Terminal window" [ref=e571]:
+            - generic [ref=e574]: Terminal window
+            - code [ref=e576]:
+              - generic [ref=e578]: git pull
+            - button "Copy to clipboard" [ref=e580] [cursor=pointer]
+          - paragraph [ref=e582]:
+            - text: This command automatically fetches the latest content from the default remote (usually
+            - code [ref=e583]: origin
+            - text: ) and merges it into your active branch. It’s a convenient way to keep your local repository up-to-date without needing to manually run both commands.
+          - paragraph [ref=e584]: "If you want to pull updates from a specific branch, you can use:"
+          - figure "Terminal window" [ref=e586]:
+            - generic [ref=e589]: Terminal window
+            - code [ref=e591]:
+              - generic [ref=e593]: git pull origin <branch>
+            - button "Copy to clipboard" [ref=e595] [cursor=pointer]
+          - paragraph [ref=e597]: This fetches and merges changes only from the specified branch on the remote repository into your current branch. It’s helpful when you want to stay synced with a particular branch rather than all branches.
+          - generic [ref=e598]:
+            - heading "Forking and contributing to open-source projects" [level=2] [ref=e599]
+            - link "Section titled “Forking and contributing to open-source projects”" [ref=e600] [cursor=pointer]:
+              - /url: "#forking-and-contributing-to-open-source-projects"
+              - img [ref=e602]
+              - generic [ref=e604]: Section titled “Forking and contributing to open-source projects”
+          - paragraph [ref=e605]: Open-source projects are community-driven solutions designed to address a variety of problems, offering free-tier implementations that could range from extensions and software libraries to simple command-line tools. These projects rely on volunteers to help maintain, update, and fix them. Contributing to these projects is a great way to improve the software while giving back to the community.
+          - paragraph [ref=e606]: At first, contributing to an open-source project might feel intimidating. After all, your code will be viewed by hundreds of people and used by even more. However, it’s not as difficult as it seems, and it’s an excellent opportunity to learn and connect with a community. Whether you decide to contribute because you’ve found a bug you want to fix or because you simply enjoy the project, the process is rewarding.
+          - paragraph [ref=e607]: Before you start writing any code, there are a few steps you need to follow. This section will guide you through the setup process.
+          - generic [ref=e608]:
+            - heading "Contributor guidelines" [level=3] [ref=e609]
+            - link "Section titled “Contributor guidelines”" [ref=e610] [cursor=pointer]:
+              - /url: "#contributor-guidelines"
+              - img [ref=e612]
+              - generic [ref=e614]: Section titled “Contributor guidelines”
+          - paragraph [ref=e615]:
+            - text: Most open-source projects include a
+            - code [ref=e616]: CONTRIBUTING.md
+            - text: file. This document outlines the steps to get started as a contributor, including what tools to download, how to run the project locally, and any specific setup instructions. It’s important to read this file carefully, as it will provide the rules and guidelines you need to follow in order to contribute effectively.
+          - paragraph [ref=e617]: Once you’ve reviewed the guidelines, you’ll need to create a copy of the repository in your Git hosting platform account, usually GitHub. This process is called “forking” the repository, and it allows you to make changes and submit pull requests (PRs) once you’ve addressed the issue you’re working on.
+          - paragraph [ref=e618]:
+            - text: "To fork a project on GitHub, refer to the official documentation:"
+            - link "Forking a project" [ref=e619] [cursor=pointer]:
+              - /url: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
+            - text: .
+          - paragraph [ref=e620]: With your fork ready, you can now submit a pull request to the original project. Your fork will be referenced, and your code will be reviewed by other contributors. They’ll decide whether to approve or reject your changes for inclusion in the main repository.
+          - paragraph [ref=e621]: Remember, contributing isn’t just about developing complex features. It can also include helping with documentation, answering questions in issues, or suggesting improvements. Every bit counts toward making the project better!
+        - generic [ref=e623]:
+          - link "Previous 4. Working with Branches" [ref=e624] [cursor=pointer]:
+            - /url: /git-primer/branches/
+            - img [ref=e625]
+            - generic [ref=e627]:
+              - text: Previous
+              - text: 4. Working with Branches
+          - link "Next 6. Undoing Changes" [ref=e628] [cursor=pointer]:
+            - /url: /git-primer/undoing-changes/
+            - img [ref=e629]
+            - generic [ref=e631]:
+              - text: Next
+              - text: 6. Undoing Changes
+  - generic [ref=e634]:
+    - button "Menu" [ref=e635]:
+      - img [ref=e637]
+      - generic: Menu
+    - button "Inspect" [ref=e641]:
+      - img [ref=e643]
+      - generic: Inspect
+    - button "Audit" [ref=e645]:
+      - img [ref=e647]
+      - generic: Audit
+    - button "Settings" [ref=e650]:
+      - img [ref=e652]
+      - generic: Settings

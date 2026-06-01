@@ -11,7 +11,7 @@
   } = $props();
 </script>
 
-<div class="gd" class:gd--fixed={height} style={height ? `height:${height}` : null}>
+<div class="gd not-content" class:gd--fixed={height} style={height ? `height:${height}` : null}>
   <header class="gd__bar">
     {#if controls}
       <div class="gd__controls">{@render controls()}</div>

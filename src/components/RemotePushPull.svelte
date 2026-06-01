@@ -2,8 +2,8 @@
   import FlowDiagram from "./FlowDiagram.svelte";
 
   const nodes = [
-    { id: "local", label: "Local repository", sub: "your machine", variant: "local", x: 0, y: 0, order: 0, minHeight: 152 },
-    { id: "remote", label: "Remote (origin)", sub: "GitHub / GitLab / …", variant: "remote", x: 420, y: 0, order: 1, minHeight: 152 },
+    { id: "local", label: "Local repository", sub: "your machine", variant: "local", x: 0, y: 0, order: 0, minHeight: 184 },
+    { id: "remote", label: "Remote (origin)", sub: "GitHub / GitLab / …", variant: "remote", x: 460, y: 0, order: 1, minHeight: 184 },
   ];
 
   const edges = [

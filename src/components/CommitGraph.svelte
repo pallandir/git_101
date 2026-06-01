@@ -163,7 +163,7 @@
   });
 </script>
 
-<div class="cg" style={`aspect-ratio:${width} / ${height}`} role="img" aria-label={label}>
+<div class="cg not-content" style={`aspect-ratio:${width} / ${height}`} role="img" aria-label={label}>
   <SvelteFlow
     nodes={flowNodes}
     edges={flowEdges}

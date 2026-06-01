@@ -36,10 +36,6 @@ export default defineConfig({
           href: "https://github.com/pallandir/git-primer",
         },
       ],
-      editLink: {
-        baseUrl:
-          "https://github.com/pallandir/git-primer/edit/main/",
-      },
       tableOfContents: false,
       customCss: ["./src/styles/custom.css"],
       components: {

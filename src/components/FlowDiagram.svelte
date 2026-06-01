@@ -4,6 +4,7 @@
   import "@xyflow/svelte/dist/style.css";
   import FlowBox from "./flow/FlowBox.svelte";
   import FlowEdge from "./flow/FlowEdge.svelte";
+  import FitView from "./flow/FitView.svelte";
 
   let {
     nodes: nodeData = [],
@@ -36,7 +37,9 @@
     id: n.id,
     type: "box",
     position: { x: n.x, y: n.y },
-    data: { label: n.label, sub: n.sub, icon: n.icon, variant: n.variant, order: n.order ?? i },
+    initialWidth: n.w ?? 190,
+    initialHeight: n.h ?? n.minHeight ?? 84,
+    data: { label: n.label, sub: n.sub, icon: n.icon, variant: n.variant, order: n.order ?? i, minHeight: n.minHeight },
     draggable: false,
     selectable: false,
   }));
@@ -87,7 +90,7 @@
   </defs>
 </svg>
 
-<div class="fd" style={`height:${height}`}>
+<div class="fd not-content" style={`height:${height}`}>
   {#if legend}
     <div class="fd__legend">
       {#each legend as item}
@@ -104,8 +107,6 @@
       {nodeTypes}
       {edgeTypes}
       {colorMode}
-      fitView
-      fitViewOptions={{ padding: 0.18 }}
       nodesDraggable={false}
       nodesConnectable={false}
       elementsSelectable={false}
@@ -115,7 +116,9 @@
       panOnDrag={false}
       proOptions={{ hideAttribution: true }}
       aria-label={label}
-    ></SvelteFlow>
+    >
+      <FitView padding={0.08} />
+    </SvelteFlow>
   </div>
 </div>
 

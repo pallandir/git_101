@@ -11,4 +11,4 @@ npm-debug.log*
 .env.production
 # macOS
 .DS_Store
-
+.playwright-mcp

@@ -3,6 +3,8 @@ title: 2. Setting Up a Git Repository
 description: Initialize and clone repositories, and understand what lives inside the .git folder.
 ---
 
+import DetachedHead from '../../components/DetachedHead.svelte';
+
 ## Initializing a repository (git init)
 
 When starting a project with Git, there are various ways to begin, depending on your situation. You could for example:
@@ -86,6 +88,8 @@ ref: refs/heads/main
 :::note
 Sometimes, `HEAD` points to a specific commit instead of a branch. This is called a **detached HEAD** state, which allows you to inspect old commits or test changes without modifying the branch. We cover how to handle it in [Chapter 11](/git-primer/troubleshooting/).
 :::
+
+<DetachedHead client:visible />
 
 ### Refs
 

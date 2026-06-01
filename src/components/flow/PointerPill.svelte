@@ -53,6 +53,13 @@
   .pp--alt {
     --ac: var(--gp-alt);
   }
+  .pp--tag {
+    --ac: var(--gp-green);
+    background: color-mix(in srgb, var(--gp-green) 16%, var(--sl-color-gray-6));
+  }
+  .pp--tag .pp__label {
+    color: var(--gp-green);
+  }
   .pp--head {
     --ac: var(--git-orange);
     background: var(--git-orange);

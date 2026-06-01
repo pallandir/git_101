@@ -4,6 +4,7 @@ description: Write good commit messages, keep a clean history, and choose the ri
 ---
 
 import FeatureWorkflow from '../../components/FeatureWorkflow.svelte';
+import TagTimeline from '../../components/TagTimeline.svelte';
 
 ## Git Best Practices
 
@@ -122,6 +123,10 @@ Start simple. Most teams are best served by GitHub Flow and should only reach fo
 ## Tagging releases well
 
 You met the mechanics of tags back in [Chapter 7](/git-primer/internals/): a lightweight tag is just a named pointer, an annotated tag is its own object with an author, date, and message. Knowing how to create one is easy. Using tags well is what turns them into a reliable map of your project's history.
+
+The key idea to hold onto is that a **branch moves and a tag stays put**. Watch how `main` keeps advancing with each commit while the tag stays pinned to the exact release it marked:
+
+<TagTimeline client:visible />
 
 **Use annotated tags for anything you release.** A lightweight tag is fine for a quick personal bookmark, but a release deserves the metadata an annotated tag records, who cut it and when:
 

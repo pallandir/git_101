@@ -118,3 +118,65 @@ Git Flow is powerful but heavy. For most modern teams practicing continuous deli
 :::tip
 Start simple. Most teams are best served by GitHub Flow and should only reach for something heavier when they feel a concrete pain that the simpler model can't solve.
 :::
+
+## Tagging releases well
+
+You met the mechanics of tags back in [Chapter 7](/git-primer/internals/): a lightweight tag is just a named pointer, an annotated tag is its own object with an author, date, and message. Knowing how to create one is easy. Using tags well is what turns them into a reliable map of your project's history.
+
+**Use annotated tags for anything you release.** A lightweight tag is fine for a quick personal bookmark, but a release deserves the metadata an annotated tag records, who cut it and when:
+
+```sh
+git tag -a v2.4.0 -m "Release 2.4.0"
+git push origin v2.4.0
+```
+
+**Follow [Semantic Versioning](https://semver.org/).** A version like `MAJOR.MINOR.PATCH` (for example `2.4.1`) tells everyone what changed at a glance: bump the **patch** for bug fixes, the **minor** for new backward-compatible features, and the **major** for breaking changes. Prefix the tag with `v` by convention (`v2.4.1`).
+
+**Treat a published tag as immutable.** Once you've pushed `v2.4.0`, the world expects it to mean one exact commit forever. Moving it to a different commit later quietly breaks everyone who already fetched it and any deploy that points at it. If you tagged the wrong commit, the honest fix is a new tag (`v2.4.1`), not a silently rewritten one.
+
+**Remember that tags don't travel with `git push`.** Branches push automatically, tags do not. Push them explicitly, either one at a time or all at once:
+
+```sh
+git push origin v2.4.0       # push a single tag
+git push origin --tags       # push every local tag
+```
+
+**Let your CI react to tags.** Most CI systems can trigger a pipeline when a tag matching a pattern like `v*` is pushed. That's how teams turn "push a tag" into "build, test, and publish a release" with no manual steps.
+
+:::tip
+Sign your release tags with `git tag -s v2.4.0` if provenance matters to you. A signed tag lets anyone verify the release was created by someone holding your key, which is increasingly expected for published software.
+:::
+
+## Working across environments (dev, staging, prod)
+
+Real companies don't run a single copy of their app. They run the same code in several **environments**, each serving a different purpose. The names vary, but the classic trio is:
+
+| Environment    | Purpose                                                        | What lives there                          |
+| -------------- | ------------------------------------------------------------- | ----------------------------------------- |
+| **dev**        | Where the team integrates and tries things, expected to break | The latest merged code                    |
+| **staging**    | A faithful mirror of production for final testing             | A release candidate, identical to prod    |
+| **production** | The live system real users touch                              | A specific, tested, tagged release        |
+
+Code is **promoted** from left to right. A change proves itself in dev, gets verified in staging against production-like data, and only then reaches production. Nothing skips straight to prod.
+
+This is exactly where tagging earns its keep. The trap teams fall into is deploying a **branch** (like `main`) to production. A branch moves, so "what's in prod" becomes a moving target you can't reproduce. Deploy an **immutable tag** instead, and "what's in prod" is suddenly a precise, repeatable fact:
+
+```sh
+# Staging deploys whatever main currently points at
+# Production deploys an exact, frozen tag
+git checkout v2.4.0    # this is the precise code prod is running
+```
+
+The payoff shows up the moment something goes wrong. Because every release is a fixed tag, a **rollback** is just redeploying the previous one:
+
+```sh
+# Production is on fire after deploying v2.4.0
+# Roll back by redeploying the last known-good tag
+git checkout v2.3.1
+```
+
+No frantic reverting, no guessing what the old code looked like. You already have an exact name for it.
+
+:::tip
+A useful mental model: **branches are for work in progress, tags are for the points you ship.** Promote code by moving it through environments, and mark each thing that reaches production with a tag so you can always reproduce or roll back to it.
+:::

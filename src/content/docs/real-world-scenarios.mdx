@@ -90,6 +90,8 @@ Everyone makes mistakes in Git. What separates a calm developer from a panicked 
 | ...committed on a detached HEAD                 | `git switch -c rescue-branch` ([Ch. 11](/git-primer/troubleshooting/)) |
 | ...committed to the wrong branch                | `git cherry-pick` it to the right one, then reset the wrong one ([Ch. 8](/git-primer/advanced-commands/)) |
 | ...committed a secret                           | Rotate it immediately, then scrub history ([Ch. 6](/git-primer/undoing-changes/), [Ch. 10](/git-primer/best-practices/)) |
+| ...pushed a file that shouldn't be there        | `git rm --cached` for clutter, or rewrite history for secrets (see below) |
+| ...deleted a branch I still needed              | `git reflog` to find its tip, then recreate it (see below)        |
 
 ### Worked example: "I committed to main by mistake"
 
@@ -105,6 +107,63 @@ git reset --hard HEAD~2
 ```
 
 Your work is safe on `feature/where-this-belongs`, and `main` is clean again. Because you understand what `reset` and `switch` actually do, a situation that looks alarming becomes three short commands.
+
+### Worked example: "I pushed a file that shouldn't be there"
+
+This one has two very different answers depending on **what** the file is, so be honest with yourself before you act.
+
+**Case 1: it's just clutter** (a build artifact, a huge binary, a stray `node_modules`). Nothing secret, you just don't want Git tracking it anymore. Stop tracking it, ignore it going forward, and push:
+
+```sh
+git rm --cached path/to/file      # stop tracking it, but keep it on disk
+echo "path/to/file" >> .gitignore
+git commit -m "chore: stop tracking build artifact"
+git push
+```
+
+The file disappears from the current state of the repository. It **still exists in older commits**, which is usually fine for harmless clutter, but it is the key thing to understand for the next case.
+
+**Case 2: it's sensitive** (an API key, a password, a private certificate, customer data). This is more serious, and the steps come in a strict order:
+
+1. **Rotate the secret first.** Assume it is already compromised the moment it touched a remote. Revoke the key, change the password, issue a new certificate. This is the only step that truly protects you, everything after it is cleanup.
+2. **Rewrite history to remove the file from every commit.** A normal delete only changes the latest commit, so you need a history-rewriting tool like [`git filter-repo`](https://github.com/newren/git-filter-repo) (recommended) or the [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/):
+
+   ```sh
+   git filter-repo --path path/to/secret --invert-paths
+   ```
+
+3. **Force-push the rewritten history**, then tell every collaborator to re-clone or rebase. Their local clones still contain the old commits and will reintroduce them if they push.
+
+:::danger
+Rewriting history does **not** guarantee the secret is gone from the world. Even after a successful force-push, the old content can still be discoverable: cached in your hosting provider's web views, frozen inside old pull requests, and present in every fork, clone, and CI log that already saw it. On GitHub you can ask GitHub Support to purge cached views and stale references, but you can never recall what someone already copied. This is why **rotating the secret is the step that actually saves you**, not the history rewrite.
+:::
+
+### Worked example: "I deleted a branch I still needed"
+
+You ran `git branch -D feature/important` a little too confidently, and now the branch is gone. Stay calm: deleting a branch only removes the *pointer*, the commits themselves are still sitting in your repository for weeks. The trick is finding where the branch tip used to point, and `git reflog` remembers exactly that:
+
+```sh
+git reflog
+# ...
+# 9c1f2ab HEAD@{5}: commit: add the feature I cared about
+# ...
+```
+
+Find the hash of the last commit that was on your branch, then recreate the branch pointing right back at it:
+
+```sh
+git switch -c feature/important 9c1f2ab
+```
+
+The branch is back, with all its commits intact. If the commit is so old that it has fallen out of the reflog, you can still hunt for orphaned commits directly:
+
+```sh
+git fsck --lost-found
+```
+
+:::caution
+This rescue only works locally and only for a while. The reflog lives in **your** clone (it is never pushed to the remote) and Git's garbage collector eventually prunes unreferenced commits, by default after about 90 days. The lesson: recover a deleted branch sooner rather than later, and remember that a teammate's machine won't have your reflog.
+:::
 
 ## Where to go from here
 
